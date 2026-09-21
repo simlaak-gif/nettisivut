@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <!-- Static form skeleton for Netlify build-time detection only. -->
+    <!-- The actual form is rendered by React in src/routes/yhteystiedot.tsx -->
+    <form name="contact" data-netlify="true" netlify-honeypot="bot-field" method="POST" hidden>
+      <input type="hidden" name="form-name" value="contact" />
+      <input name="name" />
+      <input name="company" />
+      <input name="phone" type="tel" />
+      <input name="email" type="email" />
+      <input name="location" />
+      <input name="type" />
+      <textarea name="message"></textarea>
+      <input name="bot-field" />
+    </form>
+  </body>
+</html>
