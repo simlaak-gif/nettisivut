@@ -38,7 +38,7 @@ const jsonLdData = {
   },
   areaServed: ["Jyväskylä", "Laukaa", "Muurame", "Äänekoski", "Keski-Suomi"],
   description:
-    "Kotitalouksien sähköasennukset, pistorasioiden ja valaisimien asennus, sähkövikojen korjaus, lieden kytkentä ja sähköremontit Jyväskylässä ja Keski-Suomessa. Tuntihinta 60 €/h, hyödynnä -60 % kotitalousvähennys!",
+    "Kotitalouksien sähköasennukset, pistorasioiden ja valaisimien asennus, sähkövikojen korjaus, lieden kytkentä ja sähköremontit Jyväskylässä ja Keski-Suomessa. Tuntihinta 60 €/h, hyödynnä kotitalousvähennys!",
 };
 
 export const Route = createFileRoute("/kotitalouksille")({
@@ -50,7 +50,7 @@ export const Route = createFileRoute("/kotitalouksille")({
       {
         name: "description",
         content:
-          "Tarvitsetko sähkömiestä kotiin Jyväskylässä tai Keski-Suomessa? Pistorasiat, valaisimet, sähköremontit ja latausasemat turvallisesti. Tuntihinta 60 €/h. Muista kotitalousvähennys -60 %!",
+          "Tarvitsetko sähkömiestä kotiin Jyväskylässä tai Keski-Suomessa? Pistorasiat, valaisimet, sähköremontit ja latausasemat turvallisesti. Tuntihinta 60 €/h. Muista kotitalousvähennys!",
       },
       {
         property: "og:title",
@@ -299,7 +299,7 @@ function FaqSection() {
   const faqs = [
     {
       q: "Paljonko sähkömies maksaa Jyväskylässä?",
-      a: "Tuntihintamme sähkötöissä on 60 € / h (sis. ALV 25,5 %). Lisäksi huoltoautomaksu lähialueella on 30 €. Muista että työn osuudesta saat -60 % kotitalousvähennyksen verotuksessa!",
+      a: "Tuntihintamme sähkötöissä on 60 € / h (sis. ALV 25,5 %). Lisäksi huoltoautomaksu lähialueella on 30 €. Muista että työn osuudesta saat kotitalousvähennyksen verotuksessa!",
     },
     {
       q: "Teettekö myös pieniä asennuksia, kuten yhden pistorasian lisäyksen tai valaisimen vaihdon?",
