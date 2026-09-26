@@ -25,7 +25,10 @@ export const Route = createFileRoute("/yrityksille")({
           "Sähköurakointi rakennusliikkeille ja yrityksille Keski-Suomessa. Aliurakointi, aikataulut pitävät, VastuuGroup Luotettava Kumppani.",
       },
       { property: "og:title", content: "Palvelut yrityksille — KS-Sähkö Oy" },
-      { property: "og:description", content: "Luotettava sähköurakoinnin kumppani rakennusliikkeille." },
+      {
+        property: "og:description",
+        content: "Luotettava sähköurakoinnin kumppani rakennusliikkeille.",
+      },
       { property: "og:image", content: b2bImg },
     ],
   }),
@@ -51,7 +54,12 @@ function B2BPage() {
 function PageHero() {
   return (
     <section className="relative isolate min-h-[78svh] flex items-end overflow-hidden">
-      <img src={b2bImg} alt="Rakennushanke" className="absolute inset-0 h-full w-full object-cover" fetchPriority="high" />
+      <img
+        src={b2bImg}
+        alt="Rakennushanke"
+        className="absolute inset-0 h-full w-full object-cover"
+        fetchPriority="high"
+      />
       <div className="absolute inset-0" style={{ background: "var(--gradient-hero)" }} />
       <div className="container-px mx-auto relative pt-36 pb-16 md:pt-44 md:pb-24">
         <div className="max-w-3xl animate-fade-up">
@@ -78,9 +86,21 @@ function Promise() {
       title: "VastuuGroup Luotettava Kumppani",
       text: "Verot, vakuutukset ja tilaajavastuulain mukaiset tiedot kunnossa — vaivattomasti todennettavissa.",
     },
-    { icon: Clock, title: "Aikataulut pitävät", text: "Resursoimme työmaan oikein. Etenemme sovitun aikataulun mukaan ja pidämme tilaajan kartalla." },
-    { icon: HardHat, title: "Ammattitaitoinen tiimi", text: "Pätevyydet ja työturvallisuuskortit kunnossa. Työmaalla ammattilainen, jolla on kokonaisuus hallussa." },
-    { icon: FileCheck, title: "Täydellinen dokumentointi", text: "Mittaukset, tarkastuspöytäkirjat ja luovutusaineisto valmiina käyttöönottoon — viivytyksittä." },
+    {
+      icon: Clock,
+      title: "Aikataulut pitävät",
+      text: "Resursoimme työmaan oikein. Etenemme sovitun aikataulun mukaan ja pidämme tilaajan kartalla.",
+    },
+    {
+      icon: HardHat,
+      title: "Ammattitaitoinen tiimi",
+      text: "Pätevyydet ja työturvallisuuskortit kunnossa. Työmaalla ammattilainen, jolla on kokonaisuus hallussa.",
+    },
+    {
+      icon: FileCheck,
+      title: "Täydellinen dokumentointi",
+      text: "Mittaukset, tarkastuspöytäkirjat ja luovutusaineisto valmiina käyttöönottoon — viivytyksittä.",
+    },
   ];
   return (
     <section className="section-y">
@@ -96,7 +116,9 @@ function Promise() {
               <div className="grid h-11 w-11 place-items-center rounded-lg bg-[var(--brand)]/15 text-[var(--brand-deep)]">
                 <Icon className="size-5" strokeWidth={2.4} />
               </div>
-              <h3 className="mt-4 text-lg font-display font-extrabold text-[var(--ink)]">{title}</h3>
+              <h3 className="mt-4 text-lg font-display font-extrabold text-[var(--ink)]">
+                {title}
+              </h3>
               <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{text}</p>
             </div>
           ))}
@@ -120,7 +142,7 @@ function ServiceList() {
     {
       title: "Aliurakointi",
       items: [
-        "Joustava aliurakointi pää­urakoitsijoille",
+        "Joustava aliurakointi pääurakoitsijoille",
         "Asennustyöt projektikohtaisesti",
         "Resurssituki työmaalle tarpeen mukaan",
         "Selkeä kommunikaatio ja raportointi",
@@ -131,7 +153,7 @@ function ServiceList() {
       items: [
         "Sähkösuunnittelu ja mitoitus",
         "Tarkastusmittaukset ja pöytäkirjat",
-        "Käyttö­ottotarkastukset",
+        "Käyttöottotarkastukset",
         "Luovutusaineisto valmiina",
       ],
     },
@@ -163,9 +185,21 @@ function ServiceList() {
 function Process() {
   const steps = [
     { n: "01", t: "Yhteydenotto", d: "Kerro hankkeesta. Vastaamme yleensä samana arkipäivänä." },
-    { n: "02", t: "Kartoitus & tarjous", d: "Käymme tarvittaessa paikan päällä. Selkeä tarjous ilman piilokustannuksia." },
-    { n: "03", t: "Toteutus aikataulussa", d: "Resursoimme tiimin ja etenemme sovitun aikataulun mukaan." },
-    { n: "04", t: "Luovutus & dokumentit", d: "Mittaukset, tarkastukset ja aineisto valmiina käyttöönottoon." },
+    {
+      n: "02",
+      t: "Kartoitus & tarjous",
+      d: "Käymme tarvittaessa paikan päällä. Selkeä tarjous ilman piilokustannuksia.",
+    },
+    {
+      n: "03",
+      t: "Toteutus aikataulussa",
+      d: "Resursoimme tiimin ja etenemme sovitun aikataulun mukaan.",
+    },
+    {
+      n: "04",
+      t: "Luovutus & dokumentit",
+      d: "Mittaukset, tarkastukset ja aineisto valmiina käyttöönottoon.",
+    },
   ];
   return (
     <section className="section-y">
@@ -174,7 +208,9 @@ function Process() {
         <div className="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
           {steps.map((s) => (
             <div key={s.n} className="relative rounded-2xl border border-border bg-card p-7">
-              <span className="font-display font-black text-5xl text-[var(--brand)] leading-none">{s.n}</span>
+              <span className="font-display font-black text-5xl text-[var(--brand)] leading-none">
+                {s.n}
+              </span>
               <h3 className="mt-4 text-lg font-display font-extrabold text-[var(--ink)]">{s.t}</h3>
               <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{s.d}</p>
               <Workflow className="absolute top-6 right-6 size-5 text-muted-foreground/30" />
@@ -192,12 +228,20 @@ function CTABar() {
       <div className="container-px mx-auto">
         <div className="rounded-2xl bg-[var(--ink)] text-white p-10 md:p-12 flex flex-col md:flex-row gap-6 items-start md:items-center justify-between">
           <div>
-            <h3 className="text-2xl md:text-3xl font-display font-extrabold">Onko sinulla hanke tulossa?</h3>
-            <p className="mt-2 text-white/70">Pyydä tarjous tai soita — käymme tarvittaessa paikan päällä.</p>
+            <h3 className="text-2xl md:text-3xl font-display font-extrabold">
+              Onko sinulla hanke tulossa?
+            </h3>
+            <p className="mt-2 text-white/70">
+              Pyydä tarjous tai soita — käymme tarvittaessa paikan päällä.
+            </p>
           </div>
           <div className="flex flex-col sm:flex-row gap-3 shrink-0">
-            <Link to="/yhteystiedot" className="btn-primary">Pyydä tarjous <ArrowRight className="size-4" /></Link>
-            <a href="tel:+358503600142" className="btn-ghost"><Phone className="size-4" /> 050 360 0142</a>
+            <Link to="/yhteystiedot" className="btn-primary">
+              Pyydä tarjous <ArrowRight className="size-4" />
+            </Link>
+            <a href="tel:+358503600142" className="btn-ghost">
+              <Phone className="size-4" /> 050 360 0142
+            </a>
           </div>
         </div>
       </div>

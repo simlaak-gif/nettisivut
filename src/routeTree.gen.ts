@@ -9,31 +9,23 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as YrityksilleRouteImport } from './routes/yrityksille'
-import { Route as YhteystiedotRouteImport } from './routes/yhteystiedot'
-import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
-import { Route as ReferenssitRouteImport } from './routes/referenssit'
-import { Route as KotitalouksilleRouteImport } from './routes/kotitalouksille'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as HinnastoRouteImport } from './routes/hinnasto'
+import { Route as KotitalouksilleRouteImport } from './routes/kotitalouksille'
+import { Route as LatausasematRouteImport } from './routes/latausasemat'
+import { Route as ReferenssitRouteImport } from './routes/referenssit'
+import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
+import { Route as YhteystiedotRouteImport } from './routes/yhteystiedot'
+import { Route as YrityksilleRouteImport } from './routes/yrityksille'
 
-const YrityksilleRoute = YrityksilleRouteImport.update({
-  id: '/yrityksille',
-  path: '/yrityksille',
+const IndexRoute = IndexRouteImport.update({
+  id: '/',
+  path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
-const YhteystiedotRoute = YhteystiedotRouteImport.update({
-  id: '/yhteystiedot',
-  path: '/yhteystiedot',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
-  id: '/sitemap.xml',
-  path: '/sitemap.xml',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ReferenssitRoute = ReferenssitRouteImport.update({
-  id: '/referenssit',
-  path: '/referenssit',
+const HinnastoRoute = HinnastoRouteImport.update({
+  id: '/hinnasto',
+  path: '/hinnasto',
   getParentRoute: () => rootRouteImport,
 } as any)
 const KotitalouksilleRoute = KotitalouksilleRouteImport.update({
@@ -41,15 +33,37 @@ const KotitalouksilleRoute = KotitalouksilleRouteImport.update({
   path: '/kotitalouksille',
   getParentRoute: () => rootRouteImport,
 } as any)
-const IndexRoute = IndexRouteImport.update({
-  id: '/',
-  path: '/',
+const LatausasematRoute = LatausasematRouteImport.update({
+  id: '/latausasemat',
+  path: '/latausasemat',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ReferenssitRoute = ReferenssitRouteImport.update({
+  id: '/referenssit',
+  path: '/referenssit',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
+  id: '/sitemap.xml',
+  path: '/sitemap.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const YhteystiedotRoute = YhteystiedotRouteImport.update({
+  id: '/yhteystiedot',
+  path: '/yhteystiedot',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const YrityksilleRoute = YrityksilleRouteImport.update({
+  id: '/yrityksille',
+  path: '/yrityksille',
   getParentRoute: () => rootRouteImport,
 } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/hinnasto': typeof HinnastoRoute
   '/kotitalouksille': typeof KotitalouksilleRoute
+  '/latausasemat': typeof LatausasematRoute
   '/referenssit': typeof ReferenssitRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/yhteystiedot': typeof YhteystiedotRoute
@@ -57,7 +71,9 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/hinnasto': typeof HinnastoRoute
   '/kotitalouksille': typeof KotitalouksilleRoute
+  '/latausasemat': typeof LatausasematRoute
   '/referenssit': typeof ReferenssitRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/yhteystiedot': typeof YhteystiedotRoute
@@ -66,7 +82,9 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/hinnasto': typeof HinnastoRoute
   '/kotitalouksille': typeof KotitalouksilleRoute
+  '/latausasemat': typeof LatausasematRoute
   '/referenssit': typeof ReferenssitRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/yhteystiedot': typeof YhteystiedotRoute
@@ -76,7 +94,9 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/hinnasto'
     | '/kotitalouksille'
+    | '/latausasemat'
     | '/referenssit'
     | '/sitemap.xml'
     | '/yhteystiedot'
@@ -84,7 +104,9 @@ export interface FileRouteTypes {
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/hinnasto'
     | '/kotitalouksille'
+    | '/latausasemat'
     | '/referenssit'
     | '/sitemap.xml'
     | '/yhteystiedot'
@@ -92,7 +114,9 @@ export interface FileRouteTypes {
   id:
     | '__root__'
     | '/'
+    | '/hinnasto'
     | '/kotitalouksille'
+    | '/latausasemat'
     | '/referenssit'
     | '/sitemap.xml'
     | '/yhteystiedot'
@@ -101,7 +125,9 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  HinnastoRoute: typeof HinnastoRoute
   KotitalouksilleRoute: typeof KotitalouksilleRoute
+  LatausasematRoute: typeof LatausasematRoute
   ReferenssitRoute: typeof ReferenssitRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   YhteystiedotRoute: typeof YhteystiedotRoute
@@ -110,32 +136,18 @@ export interface RootRouteChildren {
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/yrityksille': {
-      id: '/yrityksille'
-      path: '/yrityksille'
-      fullPath: '/yrityksille'
-      preLoaderRoute: typeof YrityksilleRouteImport
+    '/': {
+      id: '/'
+      path: '/'
+      fullPath: '/'
+      preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/yhteystiedot': {
-      id: '/yhteystiedot'
-      path: '/yhteystiedot'
-      fullPath: '/yhteystiedot'
-      preLoaderRoute: typeof YhteystiedotRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/sitemap.xml': {
-      id: '/sitemap.xml'
-      path: '/sitemap.xml'
-      fullPath: '/sitemap.xml'
-      preLoaderRoute: typeof SitemapDotxmlRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/referenssit': {
-      id: '/referenssit'
-      path: '/referenssit'
-      fullPath: '/referenssit'
-      preLoaderRoute: typeof ReferenssitRouteImport
+    '/hinnasto': {
+      id: '/hinnasto'
+      path: '/hinnasto'
+      fullPath: '/hinnasto'
+      preLoaderRoute: typeof HinnastoRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/kotitalouksille': {
@@ -145,11 +157,39 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof KotitalouksilleRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/': {
-      id: '/'
-      path: '/'
-      fullPath: '/'
-      preLoaderRoute: typeof IndexRouteImport
+    '/latausasemat': {
+      id: '/latausasemat'
+      path: '/latausasemat'
+      fullPath: '/latausasemat'
+      preLoaderRoute: typeof LatausasematRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/referenssit': {
+      id: '/referenssit'
+      path: '/referenssit'
+      fullPath: '/referenssit'
+      preLoaderRoute: typeof ReferenssitRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sitemap.xml': {
+      id: '/sitemap.xml'
+      path: '/sitemap.xml'
+      fullPath: '/sitemap.xml'
+      preLoaderRoute: typeof SitemapDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/yhteystiedot': {
+      id: '/yhteystiedot'
+      path: '/yhteystiedot'
+      fullPath: '/yhteystiedot'
+      preLoaderRoute: typeof YhteystiedotRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/yrityksille': {
+      id: '/yrityksille'
+      path: '/yrityksille'
+      fullPath: '/yrityksille'
+      preLoaderRoute: typeof YrityksilleRouteImport
       parentRoute: typeof rootRouteImport
     }
   }
@@ -157,7 +197,9 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  HinnastoRoute: HinnastoRoute,
   KotitalouksilleRoute: KotitalouksilleRoute,
+  LatausasematRoute: LatausasematRoute,
   ReferenssitRoute: ReferenssitRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   YhteystiedotRoute: YhteystiedotRoute,
@@ -166,3 +208,13 @@ const rootRouteChildren: RootRouteChildren = {
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { startInstance } from './start.ts'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+    config: Awaited<ReturnType<typeof startInstance.getOptions>>
+  }
+}

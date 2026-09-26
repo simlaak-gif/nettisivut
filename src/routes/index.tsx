@@ -20,20 +20,75 @@ import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { SectionHeading } from "@/components/SectionHeading";
 
+const jsonLdData = {
+  "@context": "https://schema.org",
+  "@type": "Electrician",
+  name: "KS-Sähkö Oy (Keski-Suomen Sähkötyö Oy)",
+  image: "https://www.ks-sahko.fi/og-image.jpg",
+  "@id": "https://www.ks-sahko.fi",
+  url: "https://www.ks-sahko.fi",
+  telephone: "+358503600142",
+  email: "info@ks-sahko.fi",
+  priceRange: "$$",
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "Päivämiehenkuja 19",
+    addressLocality: "Laukaa",
+    postalCode: "41340",
+    addressCountry: "FI",
+  },
+  geo: {
+    "@type": "GeoCoordinates",
+    latitude: 62.4131,
+    longitude: 25.9525,
+  },
+  areaServed: [
+    {
+      "@type": "City",
+      name: "Jyväskylä",
+    },
+    {
+      "@type": "City",
+      name: "Laukaa",
+    },
+    {
+      "@type": "City",
+      name: "Muurame",
+    },
+    {
+      "@type": "AdministrativeArea",
+      name: "Keski-Suomi",
+    },
+  ],
+  openingHoursSpecification: {
+    "@type": "OpeningHoursSpecification",
+    dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+    opens: "07:00",
+    closes: "16:00",
+  },
+  sameAs: ["https://www.vastuugroup.fi"],
+};
+
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "KS-Sähkö Oy — Luotettavaa sähköurakointia Keski-Suomessa" },
+      { title: "Sähköurakointi & Sähköasennukset Jyväskylä ja Keski-Suomi | KS-Sähkö Oy" },
       {
         name: "description",
         content:
-          "Sähköurakointi ja kotitalouksien sähkötyöt Jyväskylä–Laukaa. Sähköasennukset, huoltopalvelut, latauspisteet ja aurinkopaneelit ammattitaidolla.",
+          "Ammattitaitoiset sähkötyöt, sähköurakointi ja aliurakointi rakennusliikkeille sekä kotitalouksille Jyväskylässä ja Keski-Suomessa. Pyydä tarjous!",
       },
-      { property: "og:title", content: "KS-Sähkö Oy — Sähköurakointi Keski-Suomessa" },
+      { property: "og:title", content: "Sähköurakointi & Sähköasennukset Jyväskylä | KS-Sähkö Oy" },
       {
         property: "og:description",
         content:
-          "Luotettava paikallinen kumppani sähkötöihin. Rakennusliikkeille ja kotitalouksille.",
+          "Ammattitaitoinen sähköurakoitsija rakennusliikkeille ja kotitalouksille Keski-Suomessa.",
+      },
+    ],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify(jsonLdData),
       },
     ],
   }),
@@ -66,10 +121,7 @@ function Hero() {
         className="absolute inset-0 h-full w-full object-cover"
         fetchPriority="high"
       />
-      <div
-        className="absolute inset-0"
-        style={{ background: "var(--gradient-hero)" }}
-      />
+      <div className="absolute inset-0" style={{ background: "var(--gradient-hero)" }} />
       <div
         className="absolute -top-40 -right-40 h-[520px] w-[520px] rounded-full opacity-30 blur-3xl"
         style={{ background: "var(--brand)" }}
@@ -80,21 +132,23 @@ function Hero() {
         <div className="max-w-3xl animate-fade-up">
           <span className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 backdrop-blur px-3.5 py-1.5 text-xs font-bold uppercase tracking-[0.18em] text-white">
             <span className="size-1.5 rounded-full bg-[var(--brand)]" />
-            Jyväskylä · Laukaa · Keski-Suomi
+            Jyväskylä · Laukaa · Muurame · Äänekoski · Korpilahti · Jämsä · Keski-Suomi
           </span>
 
           <h1 className="mt-6 text-4xl sm:text-5xl md:text-7xl font-display font-black text-white leading-[1.02]">
-            Luotettavaa{" "}
+            Luotettava{" "}
             <span className="relative inline-block px-3 sm:px-4">
               <span
                 className="absolute inset-0 -z-0 rounded-lg"
                 style={{ background: "var(--brand)" }}
                 aria-hidden
               />
-              <span className="relative z-10 text-[var(--ink)]">sähköurakointia</span>
+              <span className="relative z-10 text-[var(--ink)]">
+                Sähköurakointi ja sähköasennukset
+              </span>
             </span>
             <br />
-            Keski-Suomessa.
+            Jyväskylässä ja Keski-Suomessa
           </h1>
 
           <p className="mt-7 max-w-2xl text-lg sm:text-xl text-white/80 leading-relaxed">
@@ -117,16 +171,24 @@ function Hero() {
           </div>
 
           <div className="mt-10 flex flex-wrap items-center gap-x-8 gap-y-3 text-sm text-white/70">
-            <a href="tel:+358503600142" className="flex items-center gap-2 font-bold text-white hover:text-[var(--brand)] transition-colors">
+            <a
+              href="tel:+358503600142"
+              className="flex items-center gap-2 font-bold text-white hover:text-[var(--brand)] transition-colors"
+            >
               <Phone className="size-4" /> 050 360 0142
             </a>
             <span className="hidden sm:inline-block h-4 w-px bg-white/20" />
-            <span className="flex items-center gap-2"><ShieldCheck className="size-4 text-[var(--brand)]" /> VastuuGroup Luotettava Kumppani</span>
+            <span className="flex items-center gap-2">
+              <ShieldCheck className="size-4 text-[var(--brand)]" /> VastuuGroup Luotettava Kumppani
+            </span>
           </div>
         </div>
       </div>
 
-      <div className="absolute bottom-0 inset-x-0 h-24 bg-gradient-to-b from-transparent to-background" aria-hidden />
+      <div
+        className="absolute bottom-0 inset-x-0 h-24 bg-gradient-to-b from-transparent to-background"
+        aria-hidden
+      />
     </section>
   );
 }
@@ -143,8 +205,12 @@ function TrustBar() {
       <div className="container-px mx-auto py-10 grid grid-cols-2 lg:grid-cols-4 gap-8">
         {stats.map((s) => (
           <div key={s.l} className="flex flex-col">
-            <span className="font-display font-black text-3xl md:text-4xl text-[var(--ink)]">{s.v}</span>
-            <span className="mt-1 text-xs uppercase tracking-[0.16em] text-muted-foreground font-semibold">{s.l}</span>
+            <span className="font-display font-black text-3xl md:text-4xl text-[var(--ink)]">
+              {s.v}
+            </span>
+            <span className="mt-1 text-xs uppercase tracking-[0.16em] text-muted-foreground font-semibold">
+              {s.l}
+            </span>
           </div>
         ))}
       </div>
@@ -158,7 +224,12 @@ function AudienceSplit() {
       <div className="container-px mx-auto">
         <SectionHeading
           eyebrow="Kenelle"
-          title={<>Kaksi selkeää polkua —<br />sama lupaus laadusta.</>}
+          title={
+            <>
+              Kaksi selkeää polkua —<br />
+              sama lupaus laadusta.
+            </>
+          }
           description="Valitse onko kyseessä rakennushanke vai kodin sähkötyöt. Räätälöimme palvelun täsmälleen sinun tarpeisiisi."
         />
 
@@ -237,7 +308,9 @@ function AudienceCard({
         </span>
       </div>
       <div className="p-7 md:p-8">
-        <h3 className="text-2xl md:text-3xl font-display font-extrabold text-[var(--ink)]">{title}</h3>
+        <h3 className="text-2xl md:text-3xl font-display font-extrabold text-[var(--ink)]">
+          {title}
+        </h3>
         <ul className="mt-5 space-y-3">
           {points.map((p) => (
             <li key={p} className="flex items-start gap-3 text-[15px] text-[var(--ink-soft)]">
@@ -261,12 +334,36 @@ function AudienceCard({
 
 function Services() {
   const items = [
-    { icon: Zap, title: "Sähköasennukset", text: "Kaikki kodin ja yritysten sähköasennukset turvallisesti ja nykymääräysten mukaisesti." },
-    { icon: Wrench, title: "Huoltopalvelut", text: "Sähkölaitteiden ja järjestelmien säännölliset huollot, vianetsintä ja nopeat korjaukset." },
-    { icon: Building2, title: "Sähköurakointi", text: "Toteutamme laadukkaat sähköurakat niin uudiskohteisiin kuin saneeraustyömaille ammattitaidolla." },
-    { icon: BatteryCharging, title: "Latauspisteet", text: "Sähköauton latauspisteiden suunnittelu ja asennus kotiin tai taloyhtiöön." },
-    { icon: Sun, title: "Aurinkopaneelit", text: "Aurinkosähköjärjestelmät avaimet käteen — mitoitus, asennus ja käyttöönotto." },
-    { icon: ShieldCheck, title: "Sähköturvallisuus", text: "Tarkastukset, mittaukset ja dokumentointi — vastaamme määräysten mukaisuudesta." },
+    {
+      icon: Zap,
+      title: "Sähköasennukset",
+      text: "Kaikki kodin ja yritysten sähköasennukset turvallisesti ja nykymääräysten mukaisesti.",
+    },
+    {
+      icon: Wrench,
+      title: "Huoltopalvelut",
+      text: "Sähkölaitteiden ja järjestelmien säännölliset huollot, vianetsintä ja nopeat korjaukset.",
+    },
+    {
+      icon: Building2,
+      title: "Sähköurakointi",
+      text: "Toteutamme laadukkaat sähköurakat niin uudiskohteisiin kuin saneeraustyömaille ammattitaidolla.",
+    },
+    {
+      icon: BatteryCharging,
+      title: "Latauspisteet",
+      text: "Sähköauton latauspisteiden suunnittelu ja asennus kotiin tai taloyhtiöön.",
+    },
+    {
+      icon: Sun,
+      title: "Aurinkopaneelit",
+      text: "Aurinkosähköjärjestelmät avaimet käteen — mitoitus, asennus ja käyttöönotto.",
+    },
+    {
+      icon: ShieldCheck,
+      title: "Sähköturvallisuus",
+      text: "Tarkastukset, mittaukset ja dokumentointi — vastaamme määräysten mukaisuudesta.",
+    },
   ];
   return (
     <section className="section-y bg-secondary/40">
@@ -282,7 +379,9 @@ function Services() {
               <div className="grid h-12 w-12 place-items-center rounded-lg bg-[var(--brand)]/15 text-[var(--brand-deep)] group-hover:bg-[var(--brand)] transition-colors">
                 <Icon className="size-6" strokeWidth={2.2} />
               </div>
-              <h3 className="mt-5 text-xl font-display font-extrabold text-[var(--ink)]">{title}</h3>
+              <h3 className="mt-5 text-xl font-display font-extrabold text-[var(--ink)]">
+                {title}
+              </h3>
               <p className="mt-2.5 text-sm leading-relaxed text-muted-foreground">{text}</p>
             </div>
           ))}
@@ -294,9 +393,21 @@ function Services() {
 
 function WhyUs() {
   const items = [
-    { icon: ShieldCheck, title: "Turvallisuus edellä", text: "Kaikki työt nykymääräysten mukaisesti — dokumentoidusti ja sertifioidusti." },
-    { icon: Clock, title: "Sovittu aikataulu pitää", text: "Pidämme kiinni lupauksistamme. Työmaa etenee suunnitellusti ja ennustettavasti." },
-    { icon: Award, title: "Paikallinen ja luotettava", text: "VastuuGroup Luotettava Kumppani -status — verot, vakuutukset ja vastuut kunnossa." },
+    {
+      icon: ShieldCheck,
+      title: "Turvallisuus edellä",
+      text: "Kaikki työt nykymääräysten mukaisesti — dokumentoidusti ja sertifioidusti.",
+    },
+    {
+      icon: Clock,
+      title: "Sovittu aikataulu pitää",
+      text: "Pidämme kiinni lupauksistamme. Työmaa etenee suunnitellusti ja ennustettavasti.",
+    },
+    {
+      icon: Award,
+      title: "Paikallinen ja luotettava",
+      text: "VastuuGroup Luotettava Kumppani -status — verot, vakuutukset ja vastuut kunnossa.",
+    },
   ];
   return (
     <section className="section-y bg-[var(--ink)] text-white relative overflow-hidden">
@@ -314,7 +425,10 @@ function WhyUs() {
         />
         <div className="mt-14 grid gap-5 md:grid-cols-3">
           {items.map(({ icon: Icon, title, text }) => (
-            <div key={title} className="rounded-2xl border border-white/10 bg-white/5 p-7 backdrop-blur">
+            <div
+              key={title}
+              className="rounded-2xl border border-white/10 bg-white/5 p-7 backdrop-blur"
+            >
               <div className="grid h-12 w-12 place-items-center rounded-lg bg-[var(--brand)] text-[var(--ink)]">
                 <Icon className="size-6" strokeWidth={2.4} />
               </div>
@@ -346,8 +460,8 @@ function CTA() {
                 vastaamme samana päivänä.
               </h2>
               <p className="mt-5 text-white/70 text-lg max-w-xl">
-                Kerro hankkeestasi muutamalla rivillä tai soita suoraan. Käymme tarvittaessa
-                paikan päällä Jyväskylän, Laukaan ja koko Keski-Suomen alueella.
+                Kerro hankkeestasi muutamalla rivillä tai soita suoraan. Käymme tarvittaessa paikan
+                päällä Jyväskylän, Laukaan ja koko Keski-Suomen alueella.
               </p>
             </div>
             <div className="flex flex-col gap-3">
