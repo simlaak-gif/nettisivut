@@ -1,58 +1,52 @@
 import { useState } from "react";
 import { Link } from "@tanstack/react-router";
-import { ChevronDown, Zap, Phone, Menu, X, Home } from "lucide-react";
+import { Phone, ChevronDown, Menu, X, Car, Wrench } from "lucide-react";
 
 export function SiteHeader() {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur border-b border-border">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-md border-b border-border shadow-sm">
       <div className="container-px mx-auto h-20 flex items-center justify-between">
-        {/* LOGO JA TEKSTI */}
+        {/* LOGO */}
         <Link to="/" className="flex items-center gap-3 group">
-          <img src="/Logo_k.png" alt="KS-Sähkö Oy" className="h-10 w-auto object-contain" />
-          <span className="text-xs font-semibold text-black tracking-tight leading-tight hidden sm:inline-block">
-            Keski-Suomen Sähkötyö Oy
-          </span>
+          <img
+            src="/Logo_k.png"
+            alt="KS-Sähkö Oy logo"
+            className="h-10 w-auto object-contain transition-transform group-hover:scale-105"
+          />
+          <div className="flex flex-col">
+            <span className="font-display font-black text-xl tracking-tight text-[var(--ink)] leading-none">
+              KS-SÄHKÖ OY
+            </span>
+            <span className="text-[10px] font-bold text-muted-foreground uppercase tracking-wider mt-1">
+              Keski-Suomen Sähkötyö Oy
+            </span>
+          </div>
         </Link>
 
         {/* PÄÄNAVIGAATIO (Desktop) */}
-        <nav className="hidden md:flex items-center gap-7">
+        <nav className="hidden lg:flex items-center gap-6">
           <Link
             to="/"
-            className="text-sm font-medium hover:text-[var(--brand-deep)] transition-colors"
+            className="text-sm font-semibold text-[var(--ink)] hover:text-[var(--brand-deep)] transition-colors"
           >
             Etusivu
           </Link>
 
           <Link
-            to="/kotitalouksille"
-            className="text-sm font-medium hover:text-[var(--brand-deep)] transition-colors"
-          >
-            Kotitalouksille
-          </Link>
-
-          <Link
             to="/yrityksille"
-            className="text-sm font-medium hover:text-[var(--brand-deep)] transition-colors"
+            className="text-sm font-semibold text-[var(--ink)] hover:text-[var(--brand-deep)] transition-colors"
           >
             Yrityksille
           </Link>
 
-          {/* UUSI HINNASTO -LINKKI */}
           <Link
-            to="/hinnasto"
-            className="text-sm font-medium hover:text-[var(--brand-deep)] transition-colors"
+            to="/kotitalouksille"
+            className="text-sm font-semibold text-[var(--ink)] hover:text-[var(--brand-deep)] transition-colors"
           >
-            Hinnasto
-          </Link>
-
-          <Link
-            to="/yhteystiedot"
-            className="text-sm font-medium hover:text-[var(--brand-deep)] transition-colors"
-          >
-            Yhteystiedot
+            Kotitalouksille
           </Link>
 
           {/* TUOTTEET & PALVELUT - PUDOTUSVALIKKO */}
@@ -62,141 +56,148 @@ export function SiteHeader() {
             onMouseLeave={() => setIsDropdownOpen(false)}
           >
             <button
-              className="flex items-center gap-1.5 text-sm font-medium hover:text-[var(--brand-deep)] transition-colors py-2"
+              className="flex items-center gap-1.5 text-sm font-semibold text-[var(--ink)] hover:text-[var(--brand-deep)] transition-colors py-2"
               onClick={() => setIsDropdownOpen(!isDropdownOpen)}
             >
               Tuotteet & Palvelut
               <ChevronDown
-                className={`size-4 transition-transform duration-200 ${isDropdownOpen ? "rotate-180" : ""}`}
+                className={`size-4 transition-transform duration-200 ${
+                  isDropdownOpen ? "rotate-180" : ""
+                }`}
               />
             </button>
 
-            {/* Pudotusvalikko */}
+            {/* PUDOTUSVALIKON SISÄLTÖ */}
             {isDropdownOpen && (
-              <div className="absolute top-full right-0 w-72 bg-card border border-border rounded-xl shadow-xl p-2 animate-in fade-in-50 slide-in-from-top-2">
+              <div className="absolute top-full left-0 w-64 bg-card border border-border rounded-xl shadow-xl p-2 z-50 animate-in fade-in slide-in-from-top-2 duration-150">
                 <Link
                   to="/latausasemat"
-                  className="flex items-start gap-3 p-3 rounded-lg hover:bg-secondary transition-colors"
+                  className="flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium text-[var(--ink)] hover:bg-secondary transition-colors"
                   onClick={() => setIsDropdownOpen(false)}
                 >
-                  <Zap className="size-5 text-[var(--brand-deep)] mt-0.5 shrink-0" />
-                  <div>
-                    <div className="text-sm font-bold text-[var(--ink)]">Latausasemat</div>
-                    <div className="text-xs text-muted-foreground">
-                      Sähköauton lataus kotiin & yrityksille
-                    </div>
+                  <div className="p-1.5 bg-[var(--brand)]/20 text-[var(--brand-deep)] rounded-md">
+                    <Car className="size-4" />
                   </div>
+                  <span>Sähköauton latausasemat</span>
                 </Link>
 
-                {/*                 <Link
-                  to="/palvelut"
-                  className="flex items-start gap-3 p-3 rounded-lg hover:bg-secondary transition-colors"
+                <Link
+                  to="/sahkosaneeraus"
+                  className="flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium text-[var(--ink)] hover:bg-secondary transition-colors"
                   onClick={() => setIsDropdownOpen(false)}
                 >
-                  <Home className="size-5 text-[var(--brand-deep)] mt-0.5 shrink-0" />
-                  <div>
-                    <div className="text-sm font-bold text-[var(--ink)]">Sähkötyöt kotiin</div>
-                    <div className="text-xs text-muted-foreground">Sähköasennukset & huollot</div>
+                  <div className="p-1.5 bg-[var(--brand)]/20 text-[var(--brand-deep)] rounded-md">
+                    <Wrench className="size-4" />
                   </div>
-                </Link> */}
+                  <span>Sähkösaneeraus & remontit</span>
+                </Link>
               </div>
             )}
           </div>
-        </nav>
 
-        {/* CTA & PUHELIN */}
-        <div className="hidden md:flex items-center gap-4">
-          <a
-            href="tel:+358503600142"
-            className="flex items-center gap-2 text-sm font-bold text-[var(--ink)] hover:opacity-80"
-          >
-            <Phone className="size-4 text-[var(--brand-deep)]" /> 050 360 0142
-          </a>
-          <Link to="/yhteystiedot" className="btn-primary text-xs px-4 py-2.5">
-            Pyydä tarjous
-          </Link>
-        </div>
-
-        {/* MOBIILINAPPI */}
-        <button
-          className="md:hidden p-2 rounded-lg hover:bg-secondary"
-          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          aria-label="Avaa valikko"
-        >
-          {isMobileMenuOpen ? <X className="size-6" /> : <Menu className="size-6" />}
-        </button>
-      </div>
-
-      {/* MOBIILIVALIKKO */}
-      {isMobileMenuOpen && (
-        <div className="md:hidden bg-card border-b border-border p-6 space-y-4">
-          <Link
-            to="/"
-            className="block text-base font-semibold text-[var(--ink)]"
-            onClick={() => setIsMobileMenuOpen(false)}
-          >
-            Etusivu
-          </Link>
           <Link
             to="/hinnasto"
-            className="block text-base font-semibold text-[var(--ink)]"
-            onClick={() => setIsMobileMenuOpen(false)}
+            className="text-sm font-semibold text-[var(--ink)] hover:text-[var(--brand-deep)] transition-colors"
           >
             Hinnasto
           </Link>
 
           <Link
-            to="/kotitalouksille"
-            className="block text-base font-semibold text-[var(--ink)]"
+            to="/yhteystiedot"
+            className="text-sm font-semibold text-[var(--ink)] hover:text-[var(--brand-deep)] transition-colors"
+          >
+            Yhteystiedot
+          </Link>
+        </nav>
+
+        {/* CTA PAINIKE & MOBIILINAPPI */}
+        <div className="flex items-center gap-4">
+          <a
+            href="tel:+358503600142"
+            className="hidden xl:flex items-center gap-2 btn-primary text-sm py-2 px-4"
+          >
+            <Phone className="size-4" /> 050 360 0142
+          </a>
+
+          <button
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            className="lg:hidden p-2 rounded-lg text-[var(--ink)] hover:bg-secondary transition-colors"
+            aria-label="Avaa valikko"
+          >
+            {isMobileMenuOpen ? <X className="size-6" /> : <Menu className="size-6" />}
+          </button>
+        </div>
+      </div>
+
+      {/* MOBIILIVALIKKO */}
+      {isMobileMenuOpen && (
+        <div className="lg:hidden bg-card border-b border-border p-4 space-y-3">
+          <Link
+            to="/"
+            className="block px-3 py-2 rounded-lg font-semibold text-[var(--ink)] hover:bg-secondary"
             onClick={() => setIsMobileMenuOpen(false)}
           >
-            Kotitalouksille
+            Etusivu
           </Link>
 
           <Link
             to="/yrityksille"
-            className="block text-base font-semibold text-[var(--ink)]"
+            className="block px-3 py-2 rounded-lg font-semibold text-[var(--ink)] hover:bg-secondary"
             onClick={() => setIsMobileMenuOpen(false)}
           >
             Yrityksille
           </Link>
 
           <Link
+            to="/kotitalouksille"
+            className="block px-3 py-2 rounded-lg font-semibold text-[var(--ink)] hover:bg-secondary"
+            onClick={() => setIsMobileMenuOpen(false)}
+          >
+            Kotitalouksille
+          </Link>
+
+          <div className="pl-3 pr-1 py-2 space-y-1 bg-secondary/50 rounded-lg">
+            <span className="block text-xs font-bold uppercase text-muted-foreground px-2 py-1">
+              Tuotteet & Palvelut
+            </span>
+            <Link
+              to="/latausasemat"
+              className="block px-2 py-1.5 text-sm font-medium text-[var(--ink)] hover:underline"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              • Sähköauton latausasemat
+            </Link>
+            <Link
+              to="/sahkosaneeraus"
+              className="block px-2 py-1.5 text-sm font-medium text-[var(--ink)] hover:underline"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              • Sähkösaneeraus & remontit
+            </Link>
+          </div>
+
+          <Link
+            to="/hinnasto"
+            className="block px-3 py-2 rounded-lg font-semibold text-[var(--ink)] hover:bg-secondary"
+            onClick={() => setIsMobileMenuOpen(false)}
+          >
+            Hinnasto
+          </Link>
+
+          <Link
             to="/yhteystiedot"
-            className="block text-base font-semibold text-[var(--ink)]"
+            className="block px-3 py-2 rounded-lg font-semibold text-[var(--ink)] hover:bg-secondary"
             onClick={() => setIsMobileMenuOpen(false)}
           >
             Yhteystiedot
           </Link>
 
-          <div className="space-y-2 pl-2 border-l-2 border-[var(--brand)]">
-            <div className="text-xs font-bold uppercase tracking-wider text-muted-foreground">
-              Tuotteet & Erikoispalvelut
-            </div>
-            <Link
-              to="/latausasemat"
-              className="flex items-center gap-2 text-sm font-medium text-[var(--ink)] py-1"
-              onClick={() => setIsMobileMenuOpen(false)}
-            >
-              <Zap className="size-4 text-[var(--brand-deep)]" /> Sähköauton latausasemat
-            </Link>
-          </div>
-
-          <div className="pt-4 border-t border-border flex flex-col gap-3">
-            <a
-              href="tel:+358503600142"
-              className="flex items-center justify-center gap-2 text-sm font-bold text-[var(--ink)] py-2 border border-border rounded-xl"
-            >
-              <Phone className="size-4 text-[var(--brand-deep)]" /> 050 360 0142
-            </a>
-            <Link
-              to="/yhteystiedot"
-              className="btn-primary text-center text-sm py-2.5"
-              onClick={() => setIsMobileMenuOpen(false)}
-            >
-              Pyydä tarjous
-            </Link>
-          </div>
+          <a
+            href="tel:+358503600142"
+            className="btn-primary w-full text-center justify-center mt-2"
+          >
+            <Phone className="size-4" /> Soita 050 360 0142
+          </a>
         </div>
       )}
     </header>

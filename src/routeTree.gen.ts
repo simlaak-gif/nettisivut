@@ -14,6 +14,7 @@ import { Route as HinnastoRouteImport } from './routes/hinnasto'
 import { Route as KotitalouksilleRouteImport } from './routes/kotitalouksille'
 import { Route as LatausasematRouteImport } from './routes/latausasemat'
 import { Route as ReferenssitRouteImport } from './routes/referenssit'
+import { Route as SahkosaneerausRouteImport } from './routes/sahkosaneeraus'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as YhteystiedotRouteImport } from './routes/yhteystiedot'
 import { Route as YrityksilleRouteImport } from './routes/yrityksille'
@@ -43,6 +44,11 @@ const ReferenssitRoute = ReferenssitRouteImport.update({
   path: '/referenssit',
   getParentRoute: () => rootRouteImport,
 } as any)
+const SahkosaneerausRoute = SahkosaneerausRouteImport.update({
+  id: '/sahkosaneeraus',
+  path: '/sahkosaneeraus',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
   id: '/sitemap.xml',
   path: '/sitemap.xml',
@@ -65,6 +71,7 @@ export interface FileRoutesByFullPath {
   '/kotitalouksille': typeof KotitalouksilleRoute
   '/latausasemat': typeof LatausasematRoute
   '/referenssit': typeof ReferenssitRoute
+  '/sahkosaneeraus': typeof SahkosaneerausRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/yhteystiedot': typeof YhteystiedotRoute
   '/yrityksille': typeof YrityksilleRoute
@@ -75,6 +82,7 @@ export interface FileRoutesByTo {
   '/kotitalouksille': typeof KotitalouksilleRoute
   '/latausasemat': typeof LatausasematRoute
   '/referenssit': typeof ReferenssitRoute
+  '/sahkosaneeraus': typeof SahkosaneerausRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/yhteystiedot': typeof YhteystiedotRoute
   '/yrityksille': typeof YrityksilleRoute
@@ -86,6 +94,7 @@ export interface FileRoutesById {
   '/kotitalouksille': typeof KotitalouksilleRoute
   '/latausasemat': typeof LatausasematRoute
   '/referenssit': typeof ReferenssitRoute
+  '/sahkosaneeraus': typeof SahkosaneerausRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/yhteystiedot': typeof YhteystiedotRoute
   '/yrityksille': typeof YrityksilleRoute
@@ -98,6 +107,7 @@ export interface FileRouteTypes {
     | '/kotitalouksille'
     | '/latausasemat'
     | '/referenssit'
+    | '/sahkosaneeraus'
     | '/sitemap.xml'
     | '/yhteystiedot'
     | '/yrityksille'
@@ -108,6 +118,7 @@ export interface FileRouteTypes {
     | '/kotitalouksille'
     | '/latausasemat'
     | '/referenssit'
+    | '/sahkosaneeraus'
     | '/sitemap.xml'
     | '/yhteystiedot'
     | '/yrityksille'
@@ -118,6 +129,7 @@ export interface FileRouteTypes {
     | '/kotitalouksille'
     | '/latausasemat'
     | '/referenssit'
+    | '/sahkosaneeraus'
     | '/sitemap.xml'
     | '/yhteystiedot'
     | '/yrityksille'
@@ -129,6 +141,7 @@ export interface RootRouteChildren {
   KotitalouksilleRoute: typeof KotitalouksilleRoute
   LatausasematRoute: typeof LatausasematRoute
   ReferenssitRoute: typeof ReferenssitRoute
+  SahkosaneerausRoute: typeof SahkosaneerausRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   YhteystiedotRoute: typeof YhteystiedotRoute
   YrityksilleRoute: typeof YrityksilleRoute
@@ -171,6 +184,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ReferenssitRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/sahkosaneeraus': {
+      id: '/sahkosaneeraus'
+      path: '/sahkosaneeraus'
+      fullPath: '/sahkosaneeraus'
+      preLoaderRoute: typeof SahkosaneerausRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/sitemap.xml': {
       id: '/sitemap.xml'
       path: '/sitemap.xml'
@@ -201,6 +221,7 @@ const rootRouteChildren: RootRouteChildren = {
   KotitalouksilleRoute: KotitalouksilleRoute,
   LatausasematRoute: LatausasematRoute,
   ReferenssitRoute: ReferenssitRoute,
+  SahkosaneerausRoute: SahkosaneerausRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   YhteystiedotRoute: YhteystiedotRoute,
   YrityksilleRoute: YrityksilleRoute,
