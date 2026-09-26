@@ -117,7 +117,7 @@ function PriceGridSection() {
   const prices = [
     {
       title: "Tuntihinta",
-      price: "59 € / h",
+      price: "60 € / h",
       unit: "sis. ALV 25,5 %",
       icon: Clock,
       desc: "Normaali sähköasennus- ja huoltotyö arkisin. Laskutus toteutuneiden työtuntien mukaan.",
@@ -125,7 +125,7 @@ function PriceGridSection() {
     },
     {
       title: "Huoltoautokäynti",
-      price: "25 €",
+      price: "30 €",
       unit: "lähialueilla (sis. ALV 25,5 %)",
       icon: Truck,
       desc: "Kattaa huoltoauton kalusto-, työkalu- ja matkakulut Jyväskylän lähialueella.",
