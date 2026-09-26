@@ -10,18 +10,29 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AurinkopaneelitRouteImport } from './routes/aurinkopaneelit'
 import { Route as HinnastoRouteImport } from './routes/hinnasto'
 import { Route as KotitalouksilleRouteImport } from './routes/kotitalouksille'
 import { Route as LatausasematRouteImport } from './routes/latausasemat'
 import { Route as ReferenssitRouteImport } from './routes/referenssit'
+import { Route as SahkoasennusRouteImport } from './routes/sahkoasennus'
+import { Route as SahkomiesJyvaskylaRouteImport } from './routes/sahkomies-jyvaskyla'
+import { Route as SahkomiesLaukaaRouteImport } from './routes/sahkomies-laukaa'
+import { Route as SahkomiesMuurameRouteImport } from './routes/sahkomies-muurame'
 import { Route as SahkosaneerausRouteImport } from './routes/sahkosaneeraus'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
+import { Route as TaloyhtioilleRouteImport } from './routes/taloyhtioille'
 import { Route as YhteystiedotRouteImport } from './routes/yhteystiedot'
 import { Route as YrityksilleRouteImport } from './routes/yrityksille'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AurinkopaneelitRoute = AurinkopaneelitRouteImport.update({
+  id: '/aurinkopaneelit',
+  path: '/aurinkopaneelit',
   getParentRoute: () => rootRouteImport,
 } as any)
 const HinnastoRoute = HinnastoRouteImport.update({
@@ -44,6 +55,26 @@ const ReferenssitRoute = ReferenssitRouteImport.update({
   path: '/referenssit',
   getParentRoute: () => rootRouteImport,
 } as any)
+const SahkoasennusRoute = SahkoasennusRouteImport.update({
+  id: '/sahkoasennus',
+  path: '/sahkoasennus',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SahkomiesJyvaskylaRoute = SahkomiesJyvaskylaRouteImport.update({
+  id: '/sahkomies-jyvaskyla',
+  path: '/sahkomies-jyvaskyla',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SahkomiesLaukaaRoute = SahkomiesLaukaaRouteImport.update({
+  id: '/sahkomies-laukaa',
+  path: '/sahkomies-laukaa',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SahkomiesMuurameRoute = SahkomiesMuurameRouteImport.update({
+  id: '/sahkomies-muurame',
+  path: '/sahkomies-muurame',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const SahkosaneerausRoute = SahkosaneerausRouteImport.update({
   id: '/sahkosaneeraus',
   path: '/sahkosaneeraus',
@@ -52,6 +83,11 @@ const SahkosaneerausRoute = SahkosaneerausRouteImport.update({
 const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
   id: '/sitemap.xml',
   path: '/sitemap.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TaloyhtioilleRoute = TaloyhtioilleRouteImport.update({
+  id: '/taloyhtioille',
+  path: '/taloyhtioille',
   getParentRoute: () => rootRouteImport,
 } as any)
 const YhteystiedotRoute = YhteystiedotRouteImport.update({
@@ -67,35 +103,53 @@ const YrityksilleRoute = YrityksilleRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/aurinkopaneelit': typeof AurinkopaneelitRoute
   '/hinnasto': typeof HinnastoRoute
   '/kotitalouksille': typeof KotitalouksilleRoute
   '/latausasemat': typeof LatausasematRoute
   '/referenssit': typeof ReferenssitRoute
+  '/sahkoasennus': typeof SahkoasennusRoute
+  '/sahkomies-jyvaskyla': typeof SahkomiesJyvaskylaRoute
+  '/sahkomies-laukaa': typeof SahkomiesLaukaaRoute
+  '/sahkomies-muurame': typeof SahkomiesMuurameRoute
   '/sahkosaneeraus': typeof SahkosaneerausRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/taloyhtioille': typeof TaloyhtioilleRoute
   '/yhteystiedot': typeof YhteystiedotRoute
   '/yrityksille': typeof YrityksilleRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/aurinkopaneelit': typeof AurinkopaneelitRoute
   '/hinnasto': typeof HinnastoRoute
   '/kotitalouksille': typeof KotitalouksilleRoute
   '/latausasemat': typeof LatausasematRoute
   '/referenssit': typeof ReferenssitRoute
+  '/sahkoasennus': typeof SahkoasennusRoute
+  '/sahkomies-jyvaskyla': typeof SahkomiesJyvaskylaRoute
+  '/sahkomies-laukaa': typeof SahkomiesLaukaaRoute
+  '/sahkomies-muurame': typeof SahkomiesMuurameRoute
   '/sahkosaneeraus': typeof SahkosaneerausRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/taloyhtioille': typeof TaloyhtioilleRoute
   '/yhteystiedot': typeof YhteystiedotRoute
   '/yrityksille': typeof YrityksilleRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/aurinkopaneelit': typeof AurinkopaneelitRoute
   '/hinnasto': typeof HinnastoRoute
   '/kotitalouksille': typeof KotitalouksilleRoute
   '/latausasemat': typeof LatausasematRoute
   '/referenssit': typeof ReferenssitRoute
+  '/sahkoasennus': typeof SahkoasennusRoute
+  '/sahkomies-jyvaskyla': typeof SahkomiesJyvaskylaRoute
+  '/sahkomies-laukaa': typeof SahkomiesLaukaaRoute
+  '/sahkomies-muurame': typeof SahkomiesMuurameRoute
   '/sahkosaneeraus': typeof SahkosaneerausRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/taloyhtioille': typeof TaloyhtioilleRoute
   '/yhteystiedot': typeof YhteystiedotRoute
   '/yrityksille': typeof YrityksilleRoute
 }
@@ -103,46 +157,70 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/aurinkopaneelit'
     | '/hinnasto'
     | '/kotitalouksille'
     | '/latausasemat'
     | '/referenssit'
+    | '/sahkoasennus'
+    | '/sahkomies-jyvaskyla'
+    | '/sahkomies-laukaa'
+    | '/sahkomies-muurame'
     | '/sahkosaneeraus'
     | '/sitemap.xml'
+    | '/taloyhtioille'
     | '/yhteystiedot'
     | '/yrityksille'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/aurinkopaneelit'
     | '/hinnasto'
     | '/kotitalouksille'
     | '/latausasemat'
     | '/referenssit'
+    | '/sahkoasennus'
+    | '/sahkomies-jyvaskyla'
+    | '/sahkomies-laukaa'
+    | '/sahkomies-muurame'
     | '/sahkosaneeraus'
     | '/sitemap.xml'
+    | '/taloyhtioille'
     | '/yhteystiedot'
     | '/yrityksille'
   id:
     | '__root__'
     | '/'
+    | '/aurinkopaneelit'
     | '/hinnasto'
     | '/kotitalouksille'
     | '/latausasemat'
     | '/referenssit'
+    | '/sahkoasennus'
+    | '/sahkomies-jyvaskyla'
+    | '/sahkomies-laukaa'
+    | '/sahkomies-muurame'
     | '/sahkosaneeraus'
     | '/sitemap.xml'
+    | '/taloyhtioille'
     | '/yhteystiedot'
     | '/yrityksille'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AurinkopaneelitRoute: typeof AurinkopaneelitRoute
   HinnastoRoute: typeof HinnastoRoute
   KotitalouksilleRoute: typeof KotitalouksilleRoute
   LatausasematRoute: typeof LatausasematRoute
   ReferenssitRoute: typeof ReferenssitRoute
+  SahkoasennusRoute: typeof SahkoasennusRoute
+  SahkomiesJyvaskylaRoute: typeof SahkomiesJyvaskylaRoute
+  SahkomiesLaukaaRoute: typeof SahkomiesLaukaaRoute
+  SahkomiesMuurameRoute: typeof SahkomiesMuurameRoute
   SahkosaneerausRoute: typeof SahkosaneerausRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
+  TaloyhtioilleRoute: typeof TaloyhtioilleRoute
   YhteystiedotRoute: typeof YhteystiedotRoute
   YrityksilleRoute: typeof YrityksilleRoute
 }
@@ -154,6 +232,13 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/aurinkopaneelit': {
+      id: '/aurinkopaneelit'
+      path: '/aurinkopaneelit'
+      fullPath: '/aurinkopaneelit'
+      preLoaderRoute: typeof AurinkopaneelitRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/hinnasto': {
@@ -184,6 +269,34 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ReferenssitRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/sahkoasennus': {
+      id: '/sahkoasennus'
+      path: '/sahkoasennus'
+      fullPath: '/sahkoasennus'
+      preLoaderRoute: typeof SahkoasennusRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sahkomies-jyvaskyla': {
+      id: '/sahkomies-jyvaskyla'
+      path: '/sahkomies-jyvaskyla'
+      fullPath: '/sahkomies-jyvaskyla'
+      preLoaderRoute: typeof SahkomiesJyvaskylaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sahkomies-laukaa': {
+      id: '/sahkomies-laukaa'
+      path: '/sahkomies-laukaa'
+      fullPath: '/sahkomies-laukaa'
+      preLoaderRoute: typeof SahkomiesLaukaaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sahkomies-muurame': {
+      id: '/sahkomies-muurame'
+      path: '/sahkomies-muurame'
+      fullPath: '/sahkomies-muurame'
+      preLoaderRoute: typeof SahkomiesMuurameRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/sahkosaneeraus': {
       id: '/sahkosaneeraus'
       path: '/sahkosaneeraus'
@@ -196,6 +309,13 @@ declare module '@tanstack/react-router' {
       path: '/sitemap.xml'
       fullPath: '/sitemap.xml'
       preLoaderRoute: typeof SitemapDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/taloyhtioille': {
+      id: '/taloyhtioille'
+      path: '/taloyhtioille'
+      fullPath: '/taloyhtioille'
+      preLoaderRoute: typeof TaloyhtioilleRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/yhteystiedot': {
@@ -217,12 +337,18 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AurinkopaneelitRoute: AurinkopaneelitRoute,
   HinnastoRoute: HinnastoRoute,
   KotitalouksilleRoute: KotitalouksilleRoute,
   LatausasematRoute: LatausasematRoute,
   ReferenssitRoute: ReferenssitRoute,
+  SahkoasennusRoute: SahkoasennusRoute,
+  SahkomiesJyvaskylaRoute: SahkomiesJyvaskylaRoute,
+  SahkomiesLaukaaRoute: SahkomiesLaukaaRoute,
+  SahkomiesMuurameRoute: SahkomiesMuurameRoute,
   SahkosaneerausRoute: SahkosaneerausRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
+  TaloyhtioilleRoute: TaloyhtioilleRoute,
   YhteystiedotRoute: YhteystiedotRoute,
   YrityksilleRoute: YrityksilleRoute,
 }

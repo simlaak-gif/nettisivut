@@ -101,7 +101,8 @@ function PageHero() {
       <div className="container-px mx-auto relative z-20 w-full text-left">
         <div className="max-w-3xl mr-auto text-left">
           <span className="inline-flex items-center gap-2 rounded-full bg-[var(--brand)] px-3.5 py-1.5 text-xs font-bold uppercase tracking-[0.18em] text-[var(--ink)]">
-            <Wrench className="size-3.5" /> Sähköremontit · Jyväskylä & Keski-Suomi
+            <Wrench className="size-3.5" /> Sähköremontit·Jyväskylä · Laukaa · Muurame · Äänekoski ·
+            Korpilahti · Jämsä · Keski-Suomi
           </span>
 
           <h1 className="mt-6 text-4xl sm:text-5xl md:text-6xl font-display font-black text-white leading-[1.08] text-left">

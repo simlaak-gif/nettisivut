@@ -143,7 +143,8 @@ function HeroSection() {
       <div className="container-px mx-auto relative z-20 w-full text-left">
         <div className="max-w-3xl mr-auto text-left">
           <span className="inline-flex items-center gap-2 rounded-full bg-[var(--brand)] px-3.5 py-1.5 text-xs font-bold uppercase tracking-[0.18em] text-[var(--ink)]">
-            <MapPin className="size-3.5" /> Jyväskylä · Laukaa · Keski-Suomi
+            <MapPin className="size-3.5" /> Jyväskylä · Laukaa · Muurame · Äänekoski · Korpilahti ·
+            Jämsä · Keski-Suomi
           </span>
 
           <h1 className="mt-6 text-4xl sm:text-5xl md:text-6xl font-display font-black text-white leading-[1.08] text-left">
@@ -227,13 +228,13 @@ function ServicesGrid() {
       icon: Zap,
       title: "Sähköasennukset & Huollot",
       desc: "Pistorasioiden, valaisimien ja kytkimien asennukset, sähkövikojen korjaukset sekä pienet ja suuret sähkötyöt kotiin ja liiketiloihin.",
-      link: "/palvelut",
+      link: "/sahkoasennus",
     },
     {
       icon: Wrench,
       title: "Sähköremontit & Saneeraukset",
       desc: "Vanhojen sähköjärjestelmien ja sähkötaulujen nykyaikaistaminen turvallisesti. Käyttöönottotarkastukset ja dokumentointi aina mukana.",
-      link: "/palvelut",
+      link: "/sahkosaneeraus",
     },
     {
       icon: Car,

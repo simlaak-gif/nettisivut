@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link } from "@tanstack/react-router";
-import { Phone, ChevronDown, Menu, X, Car, Wrench } from "lucide-react";
+import { Phone, ChevronDown, Menu, X, Car, Wrench, Zap, Sun } from "lucide-react";
 
 export function SiteHeader() {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -27,7 +27,7 @@ export function SiteHeader() {
         </Link>
 
         {/* PÄÄNAVIGAATIO (Desktop) */}
-        <nav className="hidden lg:flex items-center gap-6">
+        <nav className="hidden xl:flex items-center gap-6">
           <Link
             to="/"
             className="text-sm font-semibold text-[var(--ink)] hover:text-[var(--brand-deep)] transition-colors"
@@ -47,6 +47,13 @@ export function SiteHeader() {
             className="text-sm font-semibold text-[var(--ink)] hover:text-[var(--brand-deep)] transition-colors"
           >
             Kotitalouksille
+          </Link>
+
+          <Link
+            to="/taloyhtioille"
+            className="text-sm font-semibold text-[var(--ink)] hover:text-[var(--brand-deep)] transition-colors"
+          >
+            Taloyhtiöille
           </Link>
 
           {/* TUOTTEET & PALVELUT - PUDOTUSVALIKKO */}
@@ -71,6 +78,17 @@ export function SiteHeader() {
             {isDropdownOpen && (
               <div className="absolute top-full left-0 w-64 bg-card border border-border rounded-xl shadow-xl p-2 z-50 animate-in fade-in slide-in-from-top-2 duration-150">
                 <Link
+                  to="/sahkoasennus"
+                  className="flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium text-[var(--ink)] hover:bg-secondary transition-colors"
+                  onClick={() => setIsDropdownOpen(false)}
+                >
+                  <div className="p-1.5 bg-[var(--brand)]/20 text-[var(--brand-deep)] rounded-md">
+                    <Zap className="size-4" />
+                  </div>
+                  <span>Sähköasennukset & Huollot</span>
+                </Link>
+
+                <Link
                   to="/latausasemat"
                   className="flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium text-[var(--ink)] hover:bg-secondary transition-colors"
                   onClick={() => setIsDropdownOpen(false)}
@@ -79,6 +97,17 @@ export function SiteHeader() {
                     <Car className="size-4" />
                   </div>
                   <span>Sähköauton latausasemat</span>
+                </Link>
+
+                <Link
+                  to="/aurinkopaneelit"
+                  className="flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium text-[var(--ink)] hover:bg-secondary transition-colors"
+                  onClick={() => setIsDropdownOpen(false)}
+                >
+                  <div className="p-1.5 bg-[var(--brand)]/20 text-[var(--brand-deep)] rounded-md">
+                    <Sun className="size-4" />
+                  </div>
+                  <span>Aurinkopaneelit & Aurinkosähkö</span>
                 </Link>
 
                 <Link
@@ -114,14 +143,14 @@ export function SiteHeader() {
         <div className="flex items-center gap-4">
           <a
             href="tel:+358503600142"
-            className="hidden xl:flex items-center gap-2 btn-primary text-sm py-2 px-4"
+            className="hidden 2xl:flex items-center gap-2 btn-primary text-sm py-2 px-4"
           >
             <Phone className="size-4" /> 050 360 0142
           </a>
 
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="lg:hidden p-2 rounded-lg text-[var(--ink)] hover:bg-secondary transition-colors"
+            className="xl:hidden p-2 rounded-lg text-[var(--ink)] hover:bg-secondary transition-colors"
             aria-label="Avaa valikko"
           >
             {isMobileMenuOpen ? <X className="size-6" /> : <Menu className="size-6" />}
@@ -131,7 +160,7 @@ export function SiteHeader() {
 
       {/* MOBIILIVALIKKO */}
       {isMobileMenuOpen && (
-        <div className="lg:hidden bg-card border-b border-border p-4 space-y-3">
+        <div className="xl:hidden bg-card border-b border-border p-4 space-y-3">
           <Link
             to="/"
             className="block px-3 py-2 rounded-lg font-semibold text-[var(--ink)] hover:bg-secondary"
@@ -156,16 +185,38 @@ export function SiteHeader() {
             Kotitalouksille
           </Link>
 
+          <Link
+            to="/taloyhtioille"
+            className="block px-3 py-2 rounded-lg font-semibold text-[var(--ink)] hover:bg-secondary"
+            onClick={() => setIsMobileMenuOpen(false)}
+          >
+            Taloyhtiöille
+          </Link>
+
           <div className="pl-3 pr-1 py-2 space-y-1 bg-secondary/50 rounded-lg">
             <span className="block text-xs font-bold uppercase text-muted-foreground px-2 py-1">
               Tuotteet & Palvelut
             </span>
+            <Link
+              to="/sahkoasennus"
+              className="block px-2 py-1.5 text-sm font-medium text-[var(--ink)] hover:underline"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              • Sähköasennukset & Huollot
+            </Link>
             <Link
               to="/latausasemat"
               className="block px-2 py-1.5 text-sm font-medium text-[var(--ink)] hover:underline"
               onClick={() => setIsMobileMenuOpen(false)}
             >
               • Sähköauton latausasemat
+            </Link>
+            <Link
+              to="/aurinkopaneelit"
+              className="block px-2 py-1.5 text-sm font-medium text-[var(--ink)] hover:underline"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              • Aurinkopaneelit & Aurinkosähkö
             </Link>
             <Link
               to="/sahkosaneeraus"
