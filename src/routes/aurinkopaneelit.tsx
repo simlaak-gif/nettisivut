@@ -155,7 +155,7 @@ function GeoFactsSection() {
             </div>
             <div>
               <strong className="text-[var(--ink)] block">Kotitalousvähennys:</strong>
-              -60 % työn osuudesta verotuksessa
+              voi pienentää työn kustannuksia — työn osuus eriteltynä laskulla.
             </div>
             <div>
               <strong className="text-[var(--ink)] block">Lisäominaisuudet:</strong>
@@ -262,7 +262,7 @@ function TargetGroupsSection() {
               kotitalousvähennyksen.
             </p>
             <ul className="mt-4 space-y-2 text-sm text-muted-foreground">
-              <li>• Katso -60 % kotitalousvähennys työn osuudesta</li>
+              <li>• Katso kotitalousvähennys työn osuudesta</li>
               <li>• Avaimet käteen -asennus 1–2 päivässä</li>
               <li>• Sähköverkkoyhtiön mikrotuotantoilmoitukset valmiina</li>
             </ul>
@@ -301,7 +301,7 @@ function FaqSection() {
     },
     {
       q: "Saako aurinkopaneelien asennustyöstä kotitalousvähennystä?",
-      a: "Kyllä saa! Aurinkopaneelijärjestelmän asennus- ja sähkötyön osuudesta saa omakotitalossa tai vapaa-ajan asunnolla täyden -60 % kotitalousvähennyksen verotuksessa.",
+      a: "Kyllä saa! Aurinkopaneelijärjestelmän asennus- ja sähkötyön osuudesta saa omakotitalossa tai vapaa-ajan asunnolla täyden kotitalousvähennyksen verotuksessa.",
     },
     {
       q: "Miten ylijäämäsähkön myynti toimii?",

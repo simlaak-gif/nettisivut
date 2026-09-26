@@ -167,7 +167,7 @@ function GeoFactsSection() {
             </div>
             <div>
               <strong className="text-[var(--ink)] block">Kotitalousvähennys:</strong>
-              -60 % työn osuudesta verotuksessa
+              voi pienentää työn kustannuksia — työn osuus eriteltynä laskulla.
             </div>
             <div>
               <strong className="text-[var(--ink)] block">Toiminta-alue:</strong>
@@ -295,7 +295,9 @@ function CommonJobsSection() {
               saat aina virallisen käyttöönottopöytäkirjan.
             </p>
             <div className="mt-4 font-semibold text-sm text-[var(--ink)]">
-              Muista hyödyntää myös kotitalousvähennys (-60 % työn osuudesta)!
+              Kotitalousvähennys voi pienentää työn kustannuksia. Kerromme, miten
+              kotitalousvähennystä voi hyödyntää sähkötyössä ja eritellemme työn osuuden laskulle
+              selkeästi.
             </div>
           </div>
         </div>
@@ -319,7 +321,7 @@ function FaqSection() {
     },
     {
       q: "Saako sähköliieden tai induktiotason kytkeä itse?",
-      a: "Ei saa. Sähkölieden, uunin ja sähkökiukaan kiinteät asennukset vaativat 3-vaihesähköä ja ne saa kytkeä vain valtuutettu sähköasentaja paloturvallisuus- ja takuusyistä.",
+      a: "Ei saa. Sähkölieden, uunin ja kiukaan kiinteät sähköliitännät tulee teettää sähköalan ammattilaisella laitteen ja asennuksen vaatimusten mukaisesti.",
     },
     {
       q: "Mikä on minimiveloitus sähkötyöstä?",

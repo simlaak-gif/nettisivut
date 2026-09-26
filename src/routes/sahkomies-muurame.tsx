@@ -186,7 +186,7 @@ function LocalServicesGrid() {
         <SectionHeading
           eyebrow="Paikallinen sähköurakoitsija"
           title="Sähköpalvelut Muuramessa ilman piilokuluja"
-          description="Palvelemme kaikkia Muuramen asuinalueita ja lähikuntia. Kaikki asennuksemme ovat Tukes S2 -luokiteltuja ja oikeutettuja kotitalousvähennykseen (-60 %)."
+          description="Palvelemme kaikkia Muuramen asuinalueita ja lähikuntia. Kaikki asennuksemme ovat S2 -luokiteltuja ja oikeutettuja kotitalousvähennykseen."
         />
 
         <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
@@ -296,7 +296,7 @@ function GeoFactsSection() {
             </div>
             <div>
               <strong className="text-[var(--ink)] block">Kotitalousvähennys:</strong>
-              -60 % työn osuudesta verotuksessa
+              voi pienentää työn kustannuksia — työn osuus eriteltynä laskulla.
             </div>
             <div>
               <strong className="text-[var(--ink)] block">Paikallinen saavutettavuus:</strong>
@@ -304,7 +304,7 @@ function GeoFactsSection() {
             </div>
             <div>
               <strong className="text-[var(--ink)] block">Lakisääteisyys:</strong>
-              Tukes S2 -sähköurakoitsija & Pöytäkirjat
+              S2 -sähköurakoitsija & Pöytäkirjat
             </div>
             <div>
               <strong className="text-[var(--ink)] block">Tilaus & Yhteydenotto:</strong>
@@ -328,7 +328,7 @@ function FaqSection() {
     },
     {
       q: "Paljonko sähkömies maksaa Muuramessa?",
-      a: "Veloituksemme on selkeä 60 € / tunti (sis. ALV 25,5 %) + huoltoautomaksu 30 € lähialueella. Työn osuudesta voit hakea -60 % kotitalousvähennyksen verotuksessa.",
+      a: "Veloituksemme on selkeä 60 € / tunti (sis. ALV 25,5 %) + huoltoautomaksu 30 € lähialueella. Työn osuudesta voit hakea kotitalousvähennyksen verotuksessa.",
     },
     {
       q: "Teettekö sähköasennuksia myös Kinkomaalla ja vapaa-ajan asunnoilla?",

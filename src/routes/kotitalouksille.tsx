@@ -222,22 +222,20 @@ function TaxDeductionSection() {
             <ShieldCheck className="size-8" />
           </div>
           <div>
-            <h3 className="text-2xl font-bold text-[var(--ink)]">
-              Hyödynnä kotitalousvähennys -60 % työn osuudesta
-            </h3>
+            <h3 className="text-2xl font-bold text-[var(--ink)]">Kotitalousvähennys sähkötöistä</h3>
             <p className="text-muted-foreground mt-3 text-sm leading-relaxed">
-              Kaikki kotona tai vapaa-ajan asunnolla teetetyt sähkötyöt ovat
-              kotitalousvähennyskelpoisia. Erittelemme laskuun aina erikseen työn osuuden ja
-              tarvikkeet, jotta vähennyksen hakeminen Verohallinnolta on mahdollisimman helppoa.
+              Kotitalousvähennys voi pienentää työn kustannuksia. Kerromme, miten
+              kotitalousvähennystä voi hyödyntää sähkötyössä ja eritellemme työn osuuden laskulle
+              selkeästi.
             </p>
             <ul className="mt-4 space-y-2 text-sm text-[var(--ink)] font-medium">
               <li className="flex items-center gap-2">
-                <Check className="size-4 text-[var(--brand-deep)]" /> Enimmäisvähennys 2 250 € /
-                henkilö (puolisoilta yhteensä 4 500 €)
+                <Check className="size-4 text-[var(--brand-deep)]" /> Eritelty työn osuus suoraan
+                laskulla
               </li>
               <li className="flex items-center gap-2">
-                <Check className="size-4 text-[var(--brand-deep)]" /> Omavastuu vain 100 €
-                kalenterivuodessa
+                <Check className="size-4 text-[var(--brand-deep)]" /> Soveltuu kotiin, paritaloon ja
+                vapaa-ajan asunnolle
               </li>
             </ul>
           </div>
@@ -270,9 +268,10 @@ function GeoFactsSection() {
               <strong className="text-[var(--ink)] block">Huoltoautomaksu:</strong>
               30 € / käynti lähialueella
             </div>
+            TypeScript
             <div>
               <strong className="text-[var(--ink)] block">Kotitalousvähennys:</strong>
-              -60 % työn osuudesta verotuksessa
+              Työn osuus eriteltynä laskulle
             </div>
             <div>
               <strong className="text-[var(--ink)] block">Tyypilliset työt:</strong>
@@ -280,7 +279,7 @@ function GeoFactsSection() {
             </div>
             <div>
               <strong className="text-[var(--ink)] block">Hyväksynnät:</strong>
-              Tukes S2 -sähköurakointioikeudet & mittauspöytäkirjat
+              S2 -sähköurakointioikeudet & mittauspöytäkirjat
             </div>
             <div>
               <strong className="text-[var(--ink)] block">Toiminta-alue:</strong>

@@ -246,9 +246,7 @@ function ProcessSection() {
             <ShieldCheck className="size-6" />
           </div>
           <div>
-            <h4 className="font-bold text-[var(--ink)]">
-              Muista hyödyntää kotitalousvähennys -60 % työn osuudesta
-            </h4>
+            <h4 className="font-bold text-[var(--ink)]">Muista hyödyntää kotitalousvähennys</h4>
             <p className="text-sm text-muted-foreground mt-1">
               Sähköremontin työn osuus on kotitalousvähennyskelpoista. Kirjaamme laskulle aina
               erillisen työn osuuden ilmoittamista varten.
@@ -271,7 +269,7 @@ function FaqSection() {
     },
     {
       q: "Mistä tietää, että sähköremontti on ajankohtainen?",
-      a: "Sähkösaneeraus on yleensä tarpeen yli 30–40 vuotta vanhoissa kiinteistöissä, joissa on vielä vanhat tulppasulakkeet, maadoittamattomat pistorasiat tai kangaspäällysteisiä johtoja. Myös sulakkeiden toistuva palaminen, laitteiden nykiminen tai pistorasioiden tummuminen ovat merkkejä saneeraustarpeesta.",
+      a: "Yli 30–40 vuotta vanhassa kiinteistössä sähköjärjestelmän kunto kannattaa arvioida erityisesti, jos järjestelmässä on vanhoja tulppasulakkeita, maadoittamattomia pistorasioita, vanhentuneita johtoja tai toistuvia sähkövikoja.",
     },
     {
       q: "Voiko sähkösaneerauksen aikana asua kotona?",

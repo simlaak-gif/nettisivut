@@ -240,7 +240,7 @@ function ConstructionPartnerSection() {
                 kuvaluonnokset hankkeeseen
               </li>
               <li className="flex items-center gap-2">
-                <CheckCircle2 className="size-4 text-[var(--brand-deep)]" /> Tukes S2 -luokiteltu
+                <CheckCircle2 className="size-4 text-[var(--brand-deep)]" /> S2 -luokiteltu
                 urakointi & Tilaajavastuu.fi OK
               </li>
             </ul>
@@ -349,7 +349,7 @@ function GeoFactsSection() {
             </div>
             <div>
               <strong className="text-[var(--ink)] block">Luokitukset:</strong>
-              Tukes S2 -sähköurakointioikeudet
+              S2 -sähköurakointioikeudet
             </div>
           </div>
         </div>

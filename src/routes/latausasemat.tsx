@@ -167,7 +167,8 @@ function GeoFactsSection() {
             </div>
             <div>
               <strong className="text-[var(--ink)] block">Kotitalousvähennys:</strong>
-              -60 % työn osuudesta verotuksessa
+              Kotitalousvähennys voi pienentää työn kustannuksia. Eritellemme työn osuuden laskulle
+              selkeästi.
             </div>
             <div>
               <strong className="text-[var(--ink)] block">Toiminta-alue:</strong>
@@ -363,7 +364,7 @@ function TargetGroupsSection() {
             <ul className="mt-4 space-y-2 text-sm text-muted-foreground">
               <li>• Yölataus edullisella pörssisähköllä</li>
               <li>• Kuormanhallinta estää pääsulakkeen laukeamisen</li>
-              <li>• Työn osuudesta -60 % kotitalousvähennys</li>
+              <li>• Kotitalousvähennys voi pienentää työn kustannuksia (työn osuus eriteltynä)</li>
             </ul>
           </div>
 
@@ -410,7 +411,7 @@ function FaqSection() {
     },
     {
       q: "Mikä ero on 11 kW ja 22 kW latausasemalla?",
-      a: "11 kW latausasema hyödyntää 3x16A virtaa ja lataa tavanomaisen täyssähköauton akusta tyhjästä täyteen noin 5–7 tunnissa. Se riittää yli 95 % omakotitaloista ilman pääsulakekoon nostoa. 22 kW asema vaatii 3x32A virran ja tarjoaa maksimilatausnopeuden autoille, jotka tukevat 22 kW sisäistä laturia.",
+      a: "Useimmissa omakotitaloissa 11 kW lataus voidaan toteuttaa ilman pääsulakekoon suurentamista, mutta sähköliittymän kapasiteetti ja muu kuormitus tulee tarkistaa ennen asennusta.",
     },
     {
       q: "Mikä on dynaaminen kuormanhallinta ja milloin sitä tarvitaan?",
