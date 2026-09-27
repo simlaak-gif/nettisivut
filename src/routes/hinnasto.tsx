@@ -206,9 +206,7 @@ function TaxDeductionSection() {
             <ShieldCheck className="size-8" />
           </div>
           <div>
-            <h3 className="text-2xl font-bold text-[var(--ink)]">
-              Hyödynnä kotitalousvähennys – jopa 60 % säästö työn osuudesta
-            </h3>
+            <h3 className="text-2xl font-bold text-[var(--ink)]">Hyödynnä kotitalousvähennys</h3>
             <p className="text-muted-foreground mt-3 leading-relaxed">
               Kaikki yksityishenkilöille tehty sähkötyö kotona tai vapaa-ajan asunnolla on
               kotitalousvähennyskelpoista. Erittelemme laskuun aina selkeästi työn osuuden ja

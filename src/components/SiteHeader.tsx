@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link } from "@tanstack/react-router";
-import { Phone, ChevronDown, Menu, X, Car, Wrench, Zap, Sun } from "lucide-react";
+import { Phone, ChevronDown, Menu, X, Car, Wrench, Zap, Sun, DraftingCompass } from "lucide-react";
 
 export function SiteHeader() {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -111,6 +111,17 @@ export function SiteHeader() {
                 </Link>
 
                 <Link
+                  to="/sahkosuunnittelu"
+                  className="flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium text-[var(--ink)] hover:bg-secondary transition-colors"
+                  onClick={() => setIsDropdownOpen(false)}
+                >
+                  <div className="p-1.5 bg-[var(--brand)]/20 text-[var(--brand-deep)] rounded-md">
+                    <DraftingCompass className="size-4" />
+                  </div>
+                  <span>Sähkösuunnittelu & piirustukset</span>
+                </Link>
+
+                <Link
                   to="/sahkosaneeraus"
                   className="flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium text-[var(--ink)] hover:bg-secondary transition-colors"
                   onClick={() => setIsDropdownOpen(false)}
@@ -123,6 +134,13 @@ export function SiteHeader() {
               </div>
             )}
           </div>
+
+          <Link
+            to="/referenssit"
+            className="text-sm font-semibold text-[var(--ink)] hover:text-[var(--brand-deep)] transition-colors"
+          >
+            Referenssit
+          </Link>
 
           <Link
             to="/hinnasto"
@@ -219,6 +237,13 @@ export function SiteHeader() {
               • Aurinkopaneelit & Aurinkosähkö
             </Link>
             <Link
+              to="/sahkosuunnittelu"
+              className="block px-2 py-1.5 text-sm font-medium text-[var(--ink)] hover:underline"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              • Sähkösuunnittelu & piirustukset
+            </Link>
+            <Link
               to="/sahkosaneeraus"
               className="block px-2 py-1.5 text-sm font-medium text-[var(--ink)] hover:underline"
               onClick={() => setIsMobileMenuOpen(false)}
@@ -226,6 +251,14 @@ export function SiteHeader() {
               • Sähkösaneeraus & remontit
             </Link>
           </div>
+
+          <Link
+            to="/referenssit"
+            className="block px-3 py-2 rounded-lg font-semibold text-[var(--ink)] hover:bg-secondary"
+            onClick={() => setIsMobileMenuOpen(false)}
+          >
+            Referenssit
+          </Link>
 
           <Link
             to="/hinnasto"

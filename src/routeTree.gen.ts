@@ -20,6 +20,7 @@ import { Route as SahkomiesJyvaskylaRouteImport } from './routes/sahkomies-jyvas
 import { Route as SahkomiesLaukaaRouteImport } from './routes/sahkomies-laukaa'
 import { Route as SahkomiesMuurameRouteImport } from './routes/sahkomies-muurame'
 import { Route as SahkosaneerausRouteImport } from './routes/sahkosaneeraus'
+import { Route as SahkosuunnitteluRouteImport } from './routes/sahkosuunnittelu'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as TaloyhtioilleRouteImport } from './routes/taloyhtioille'
 import { Route as YhteystiedotRouteImport } from './routes/yhteystiedot'
@@ -80,6 +81,11 @@ const SahkosaneerausRoute = SahkosaneerausRouteImport.update({
   path: '/sahkosaneeraus',
   getParentRoute: () => rootRouteImport,
 } as any)
+const SahkosuunnitteluRoute = SahkosuunnitteluRouteImport.update({
+  id: '/sahkosuunnittelu',
+  path: '/sahkosuunnittelu',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
   id: '/sitemap.xml',
   path: '/sitemap.xml',
@@ -113,6 +119,7 @@ export interface FileRoutesByFullPath {
   '/sahkomies-laukaa': typeof SahkomiesLaukaaRoute
   '/sahkomies-muurame': typeof SahkomiesMuurameRoute
   '/sahkosaneeraus': typeof SahkosaneerausRoute
+  '/sahkosuunnittelu': typeof SahkosuunnitteluRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/taloyhtioille': typeof TaloyhtioilleRoute
   '/yhteystiedot': typeof YhteystiedotRoute
@@ -130,6 +137,7 @@ export interface FileRoutesByTo {
   '/sahkomies-laukaa': typeof SahkomiesLaukaaRoute
   '/sahkomies-muurame': typeof SahkomiesMuurameRoute
   '/sahkosaneeraus': typeof SahkosaneerausRoute
+  '/sahkosuunnittelu': typeof SahkosuunnitteluRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/taloyhtioille': typeof TaloyhtioilleRoute
   '/yhteystiedot': typeof YhteystiedotRoute
@@ -148,6 +156,7 @@ export interface FileRoutesById {
   '/sahkomies-laukaa': typeof SahkomiesLaukaaRoute
   '/sahkomies-muurame': typeof SahkomiesMuurameRoute
   '/sahkosaneeraus': typeof SahkosaneerausRoute
+  '/sahkosuunnittelu': typeof SahkosuunnitteluRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/taloyhtioille': typeof TaloyhtioilleRoute
   '/yhteystiedot': typeof YhteystiedotRoute
@@ -167,6 +176,7 @@ export interface FileRouteTypes {
     | '/sahkomies-laukaa'
     | '/sahkomies-muurame'
     | '/sahkosaneeraus'
+    | '/sahkosuunnittelu'
     | '/sitemap.xml'
     | '/taloyhtioille'
     | '/yhteystiedot'
@@ -184,6 +194,7 @@ export interface FileRouteTypes {
     | '/sahkomies-laukaa'
     | '/sahkomies-muurame'
     | '/sahkosaneeraus'
+    | '/sahkosuunnittelu'
     | '/sitemap.xml'
     | '/taloyhtioille'
     | '/yhteystiedot'
@@ -201,6 +212,7 @@ export interface FileRouteTypes {
     | '/sahkomies-laukaa'
     | '/sahkomies-muurame'
     | '/sahkosaneeraus'
+    | '/sahkosuunnittelu'
     | '/sitemap.xml'
     | '/taloyhtioille'
     | '/yhteystiedot'
@@ -219,6 +231,7 @@ export interface RootRouteChildren {
   SahkomiesLaukaaRoute: typeof SahkomiesLaukaaRoute
   SahkomiesMuurameRoute: typeof SahkomiesMuurameRoute
   SahkosaneerausRoute: typeof SahkosaneerausRoute
+  SahkosuunnitteluRoute: typeof SahkosuunnitteluRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   TaloyhtioilleRoute: typeof TaloyhtioilleRoute
   YhteystiedotRoute: typeof YhteystiedotRoute
@@ -304,6 +317,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof SahkosaneerausRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/sahkosuunnittelu': {
+      id: '/sahkosuunnittelu'
+      path: '/sahkosuunnittelu'
+      fullPath: '/sahkosuunnittelu'
+      preLoaderRoute: typeof SahkosuunnitteluRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/sitemap.xml': {
       id: '/sitemap.xml'
       path: '/sitemap.xml'
@@ -347,6 +367,7 @@ const rootRouteChildren: RootRouteChildren = {
   SahkomiesLaukaaRoute: SahkomiesLaukaaRoute,
   SahkomiesMuurameRoute: SahkomiesMuurameRoute,
   SahkosaneerausRoute: SahkosaneerausRoute,
+  SahkosuunnitteluRoute: SahkosuunnitteluRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   TaloyhtioilleRoute: TaloyhtioilleRoute,
   YhteystiedotRoute: YhteystiedotRoute,

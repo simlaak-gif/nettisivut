@@ -179,7 +179,7 @@ function ServicesGrid() {
         <SectionHeading
           eyebrow="Palvelumme kotiin"
           title="Kaikki sähköasennukset ja -huollot kotitalouksille"
-          description="Eipä liian pientä tai suurta sähkötyötä. Palvelemme joustavasti ja aina läpinäkyvällä 60 €/h tuntihinnoittelulla."
+          description="Eipä liian pientä tai suurta sähkötyötä. Palvelemme joustavasti ja aina läpinäkyvällä 60 €/h tuntihinnoittelulla tai laskemme tapaskohtaisen tarjouksen, kysy rohkeasti!"
         />
         <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {services.map((s) => (
