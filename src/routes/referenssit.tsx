@@ -4,7 +4,7 @@ import { Phone, ArrowRight, MessageSquareQuote, FileCode2 } from "lucide-react";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { SectionHeading } from "@/components/SectionHeading";
-import heroBgImage from "../assets/hero.jpg";
+import heroBgImage from "../assets/auto-hero.jpg";
 
 const jsonLdData = {
   "@context": "https://schema.org",

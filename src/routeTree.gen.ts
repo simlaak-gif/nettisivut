@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AurinkopaneelitRouteImport } from './routes/aurinkopaneelit'
+import { Route as EnergiaremonttiRouteImport } from './routes/energiaremontti'
 import { Route as HinnastoRouteImport } from './routes/hinnasto'
 import { Route as KotitalouksilleRouteImport } from './routes/kotitalouksille'
 import { Route as LatausasematRouteImport } from './routes/latausasemat'
@@ -34,6 +35,11 @@ const IndexRoute = IndexRouteImport.update({
 const AurinkopaneelitRoute = AurinkopaneelitRouteImport.update({
   id: '/aurinkopaneelit',
   path: '/aurinkopaneelit',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EnergiaremonttiRoute = EnergiaremonttiRouteImport.update({
+  id: '/energiaremontti',
+  path: '/energiaremontti',
   getParentRoute: () => rootRouteImport,
 } as any)
 const HinnastoRoute = HinnastoRouteImport.update({
@@ -110,6 +116,7 @@ const YrityksilleRoute = YrityksilleRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/aurinkopaneelit': typeof AurinkopaneelitRoute
+  '/energiaremontti': typeof EnergiaremonttiRoute
   '/hinnasto': typeof HinnastoRoute
   '/kotitalouksille': typeof KotitalouksilleRoute
   '/latausasemat': typeof LatausasematRoute
@@ -128,6 +135,7 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/aurinkopaneelit': typeof AurinkopaneelitRoute
+  '/energiaremontti': typeof EnergiaremonttiRoute
   '/hinnasto': typeof HinnastoRoute
   '/kotitalouksille': typeof KotitalouksilleRoute
   '/latausasemat': typeof LatausasematRoute
@@ -147,6 +155,7 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/aurinkopaneelit': typeof AurinkopaneelitRoute
+  '/energiaremontti': typeof EnergiaremonttiRoute
   '/hinnasto': typeof HinnastoRoute
   '/kotitalouksille': typeof KotitalouksilleRoute
   '/latausasemat': typeof LatausasematRoute
@@ -167,6 +176,7 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/aurinkopaneelit'
+    | '/energiaremontti'
     | '/hinnasto'
     | '/kotitalouksille'
     | '/latausasemat'
@@ -185,6 +195,7 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/aurinkopaneelit'
+    | '/energiaremontti'
     | '/hinnasto'
     | '/kotitalouksille'
     | '/latausasemat'
@@ -203,6 +214,7 @@ export interface FileRouteTypes {
     | '__root__'
     | '/'
     | '/aurinkopaneelit'
+    | '/energiaremontti'
     | '/hinnasto'
     | '/kotitalouksille'
     | '/latausasemat'
@@ -222,6 +234,7 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AurinkopaneelitRoute: typeof AurinkopaneelitRoute
+  EnergiaremonttiRoute: typeof EnergiaremonttiRoute
   HinnastoRoute: typeof HinnastoRoute
   KotitalouksilleRoute: typeof KotitalouksilleRoute
   LatausasematRoute: typeof LatausasematRoute
@@ -252,6 +265,13 @@ declare module '@tanstack/react-router' {
       path: '/aurinkopaneelit'
       fullPath: '/aurinkopaneelit'
       preLoaderRoute: typeof AurinkopaneelitRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/energiaremontti': {
+      id: '/energiaremontti'
+      path: '/energiaremontti'
+      fullPath: '/energiaremontti'
+      preLoaderRoute: typeof EnergiaremonttiRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/hinnasto': {
@@ -358,6 +378,7 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AurinkopaneelitRoute: AurinkopaneelitRoute,
+  EnergiaremonttiRoute: EnergiaremonttiRoute,
   HinnastoRoute: HinnastoRoute,
   KotitalouksilleRoute: KotitalouksilleRoute,
   LatausasematRoute: LatausasematRoute,

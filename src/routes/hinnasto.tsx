@@ -14,7 +14,7 @@ import {
 } from "lucide-react";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
-import heroBgImage from "@/assets/hero.jpg";
+import heroBgImage from "@/assets/hinta-hero.jpg";
 
 // Schema.org-data tekoälyhakuja ja hakukoneita (SEO & GEO) varten
 const jsonLdData = {

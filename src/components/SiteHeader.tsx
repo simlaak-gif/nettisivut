@@ -1,10 +1,26 @@
 import { useState } from "react";
 import { Link } from "@tanstack/react-router";
-import { Phone, ChevronDown, Menu, X, Car, Wrench, Zap, Sun, DraftingCompass } from "lucide-react";
+import {
+  Phone,
+  ChevronDown,
+  Menu,
+  X,
+  Car,
+  Wrench,
+  Zap,
+  Sun,
+  DraftingCompass,
+  TrendingDown,
+  MessageCircle,
+} from "lucide-react";
 
 export function SiteHeader() {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  // WhatsApp-linkki esitäytetyllä viestillä
+  const whatsappUrl =
+    "https://wa.me/358503600142?text=Hei!%20Haluaisin%20kysy%C3%A4%20lis%C3%A4%C3%A4%20s%C3%A4hk%C3%B6t%C3%B6ist%C3%A4.";
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-md border-b border-border shadow-sm">
@@ -76,7 +92,25 @@ export function SiteHeader() {
 
             {/* PUDOTUSVALIKON SISÄLTÖ */}
             {isDropdownOpen && (
-              <div className="absolute top-full left-0 w-64 bg-card border border-border rounded-xl shadow-xl p-2 z-50 animate-in fade-in slide-in-from-top-2 duration-150">
+              <div className="absolute top-full left-0 w-72 bg-card border border-border rounded-xl shadow-xl p-2 z-50 animate-in fade-in slide-in-from-top-2 duration-150">
+                <Link
+                  to="/energiaremontti"
+                  className="flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium text-[var(--ink)] hover:bg-secondary transition-colors"
+                  onClick={() => setIsDropdownOpen(false)}
+                >
+                  <div className="p-1.5 bg-[var(--brand)]/20 text-[var(--brand-deep)] rounded-md">
+                    <TrendingDown className="size-4" />
+                  </div>
+                  <div>
+                    <span className="block font-bold text-xs text-[var(--ink)]">
+                      Energiaremontti & Pörssisähkö
+                    </span>
+                    <span className="block text-[10px] text-muted-foreground">
+                      Säästä sähkölaskussa
+                    </span>
+                  </div>
+                </Link>
+
                 <Link
                   to="/sahkoasennus"
                   className="flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium text-[var(--ink)] hover:bg-secondary transition-colors"
@@ -157,8 +191,21 @@ export function SiteHeader() {
           </Link>
         </nav>
 
-        {/* CTA PAINIKE & MOBIILINAPPI */}
-        <div className="flex items-center gap-4">
+        {/* CTA PAINIKKEET (WHATSAPP + SOITA) */}
+        <div className="flex items-center gap-3">
+          {/* WhatsApp-painike */}
+          <a
+            href={whatsappUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-2 bg-[#25D366] hover:bg-[#20bd5a] text-white font-bold text-xs sm:text-sm py-2 px-3.5 rounded-lg transition-all shadow-sm"
+            aria-label="Lähetä WhatsApp-viesti"
+          >
+            <MessageCircle className="size-4 fill-white shrink-0" />
+            <span className="hidden sm:inline">WhatsApp</span>
+          </a>
+
+          {/* Soita-painike */}
           <a
             href="tel:+358503600142"
             className="hidden 2xl:flex items-center gap-2 btn-primary text-sm py-2 px-4"
@@ -166,9 +213,10 @@ export function SiteHeader() {
             <Phone className="size-4" /> 050 360 0142
           </a>
 
+          {/* Mobiilivalikkopainike */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="xl:hidden p-2 rounded-lg text-[var(--ink)] hover:bg-secondary transition-colors"
+            className="xl:hidden p-2 rounded-lg text-[var(--ink)] hover:bg-secondary transition-colors ml-1"
             aria-label="Avaa valikko"
           >
             {isMobileMenuOpen ? <X className="size-6" /> : <Menu className="size-6" />}
@@ -215,6 +263,13 @@ export function SiteHeader() {
             <span className="block text-xs font-bold uppercase text-muted-foreground px-2 py-1">
               Tuotteet & Palvelut
             </span>
+            <Link
+              to="/energiaremontti"
+              className="block px-2 py-1.5 text-sm font-bold text-[var(--brand-deep)] hover:underline"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              • Energiaremontti & Pörssisähkö
+            </Link>
             <Link
               to="/sahkoasennus"
               className="block px-2 py-1.5 text-sm font-medium text-[var(--ink)] hover:underline"
@@ -276,12 +331,19 @@ export function SiteHeader() {
             Yhteystiedot
           </Link>
 
-          <a
-            href="tel:+358503600142"
-            className="btn-primary w-full text-center justify-center mt-2"
-          >
-            <Phone className="size-4" /> Soita 050 360 0142
-          </a>
+          <div className="pt-2 space-y-2">
+            <a
+              href={whatsappUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-center gap-2 bg-[#25D366] text-white font-bold text-sm py-2.5 px-4 rounded-lg w-full"
+            >
+              <MessageCircle className="size-4 fill-white" /> Lähetä WhatsApp-viesti
+            </a>
+            <a href="tel:+358503600142" className="btn-primary w-full text-center justify-center">
+              <Phone className="size-4" /> Soita 050 360 0142
+            </a>
+          </div>
         </div>
       )}
     </header>

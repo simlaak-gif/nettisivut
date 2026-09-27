@@ -159,7 +159,7 @@ function HeroSection() {
 
           <div className="mt-8 flex flex-wrap gap-4 justify-start">
             <Link to="/yhteystiedot" className="btn-primary">
-              Pyydä sähkötarjous <ArrowRight className="size-4" />
+              Pyydä sähkötyötarjous <ArrowRight className="size-4" />
             </Link>
             <a
               href="tel:+358503600142"
@@ -256,7 +256,7 @@ function ServicesGrid() {
         <SectionHeading
           eyebrow="Palvelumme"
           title="Monipuoliset sähköpalvelut Keski-Suomessa"
-          description="Etsitpä sitten sähkömiestä pienasennukseen tai urakoitsijaa laajempaan sähköremonttiin, palvelemme joustavasti."
+          description="Etsitpä sitten sähkömiestä pienasennukseen tai urakoitsijaa laajempaan sähköurakkaan, palvelemme joustavasti."
         />
         <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
           {services.map((s) => (
