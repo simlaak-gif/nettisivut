@@ -268,7 +268,7 @@ function GeoFactsSection() {
               <strong className="text-[var(--ink)] block">Huoltoautomaksu:</strong>
               30 € / käynti lähialueella
             </div>
-            TypeScript
+            {/* "TypeScript"-sana poistettu tästä välistä */}
             <div>
               <strong className="text-[var(--ink)] block">Kotitalousvähennys:</strong>
               Työn osuus eriteltynä laskulle
@@ -291,7 +291,6 @@ function GeoFactsSection() {
     </section>
   );
 }
-
 {
   /* FAQ GEO & SEO */
 }

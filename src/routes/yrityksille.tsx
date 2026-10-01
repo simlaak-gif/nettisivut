@@ -126,9 +126,10 @@ function PageHero() {
             </Link>
             <a
               href="tel:+358503600142"
-              className="btn-ghost text-white border-white/30 hover:bg-white/10 backdrop-blur-sm"
+              className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-lg border border-white/40 text-white hover:bg-white/10 transition-colors font-semibold"
             >
-              <Phone className="size-4" /> 050 360 0142
+              <Phone className="size-4 text-white shrink-0" />
+              <span>050 360 0142</span>
             </a>
           </div>
         </div>
@@ -251,9 +252,10 @@ function ConstructionPartnerSection() {
             </Link>
             <a
               href="tel:+358503600142"
-              className="btn-ghost w-full text-center justify-center border-border"
+              className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-lg border border-border bg-card text-[var(--ink)] hover:bg-secondary transition-colors font-semibold"
             >
-              <Phone className="size-4" /> 050 360 0142
+              <Phone className="size-4 shrink-0 text-[var(--brand-deep)]" />
+              <span>050 360 0142</span>
             </a>
           </div>
         </div>
@@ -427,8 +429,13 @@ function ContactCtaSection() {
             <Link to="/yhteystiedot" className="btn-primary">
               Pyydä B2B-tarjous <ArrowRight className="size-4" />
             </Link>
-            <a href="tel:+358503600142" className="btn-ghost">
-              <Phone className="size-4" /> 050 360 0142
+
+            <a
+              href="tel:+358503600142"
+              className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-lg border border-white/40 text-white hover:bg-white/10 transition-colors font-semibold"
+            >
+              <Phone className="size-4 text-white shrink-0" />
+              <span className="text-white">050 360 0142</span>
             </a>
           </div>
         </div>

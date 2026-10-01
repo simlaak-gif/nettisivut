@@ -415,7 +415,7 @@ function FaqSection() {
     },
     {
       q: "Mikä on dynaaminen kuormanhallinta ja milloin sitä tarvitaan?",
-      a: "Dynaaminen kuormanhallinta mittaa talon muuta sähkönkulutusta (esim. kiuas, ilmalämpöpumppu, leivinuuni) reaaliajassa. Jos talon kulutus nousee korkeaksi, latausasema säätää auton lataustehoa alaspäin, jotta talon pääsulakkeet eivät pala.",
+      a: "Dynaaminen kuormanhallinta mittaa talon muuta sähkönkulutusta (esim. kiuas, ilmalämpöpumppu) reaaliajassa. Jos talon kulutus nousee korkeaksi, latausasema säätää auton lataustehoa alaspäin, jotta talon pääsulakkeet eivät pala.",
     },
     {
       q: "Voiko latausaseman asentaa vanhaan omakotitaloon?",
