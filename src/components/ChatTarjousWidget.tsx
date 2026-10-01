@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { X, Send, Upload, CheckCircle2, Sparkles } from "lucide-react";
+import { X, Send, CheckCircle2, Sparkles } from "lucide-react";
 
 type ServiceOption =
   | "Pistorasian asennus/vaihto"
@@ -24,7 +24,6 @@ export function ChatTarjousWidget() {
   const [location, setLocation] = useState<string>("");
   const [selectedTime, setSelectedTime] = useState<TimeOption | "">("");
   const [description, setDescription] = useState<string>("");
-  const [selectedFile, setSelectedFile] = useState<File | null>(null);
   const [name, setName] = useState<string>("");
   const [phone, setPhone] = useState<string>("");
   const [email, setEmail] = useState<string>("");
@@ -65,7 +64,6 @@ export function ChatTarjousWidget() {
 
     try {
       const formData = new FormData();
-      // Kytketty sinun Web3Forms Access Key
       formData.append("access_key", "d27e59d7-fc45-4b26-8860-ff6af1e6df72");
       formData.append("subject", `Uusi tarjouspyyntö: ${selectedService} (${name})`);
       formData.append("from_name", "KS-Sähkö Verkkosivu-Widget");
@@ -77,10 +75,6 @@ export function ChatTarjousWidget() {
       formData.append("Asiakkaan Nimi", name);
       formData.append("Asiakkaan Puhelin", phone);
       formData.append("Asiakkaan Sähköposti", email || "Ei annettu");
-
-      if (selectedFile) {
-        formData.append("attachment", selectedFile);
-      }
 
       const response = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
@@ -108,7 +102,6 @@ export function ChatTarjousWidget() {
     setLocation("");
     setSelectedTime("");
     setDescription("");
-    setSelectedFile(null);
     setName("");
     setPhone("");
     setEmail("");
@@ -237,7 +230,7 @@ export function ChatTarjousWidget() {
                   </div>
                 )}
 
-                {/* VAIHE 4: KUVA / LISÄTIEDOT & YHTEYSTIEDOT */}
+                {/* VAIHE 4: LISÄTIEDOT & YHTEYSTIEDOT */}
                 {step >= 4 && (
                   <form
                     onSubmit={handleSubmit}
@@ -255,29 +248,10 @@ export function ChatTarjousWidget() {
                     />
 
                     <div className="bg-card border border-border p-3 rounded-2xl rounded-tl-none text-xs text-[var(--ink)] font-semibold shadow-sm max-w-[85%]">
-                      📷 Voit halutessasi liittää kuvan kohteesta sekä jättää yhteystietosi
-                      tarjousta varten.
+                      ✍️ Voit jättää lisätietoja kohteesta sekä yhteystietosi tarjousta varten.
                     </div>
 
                     <div className="space-y-2 pl-2 bg-card p-3 rounded-2xl border border-border">
-                      <div>
-                        <label className="block text-[11px] font-bold text-muted-foreground mb-1">
-                          Liitä kuva kohteesta (valinnainen)
-                        </label>
-                        <label className="flex items-center gap-2 p-2 border border-dashed border-border rounded-xl cursor-pointer hover:bg-secondary text-xs text-muted-foreground">
-                          <Upload className="size-4 text-[var(--brand-deep)]" />
-                          <span className="truncate">
-                            {selectedFile ? selectedFile.name : "Valitse kuva laitteeltasi..."}
-                          </span>
-                          <input
-                            type="file"
-                            accept="image/*"
-                            onChange={(e) => setSelectedFile(e.target.files?.[0] || null)}
-                            className="hidden"
-                          />
-                        </label>
-                      </div>
-
                       <div>
                         <input
                           type="text"
