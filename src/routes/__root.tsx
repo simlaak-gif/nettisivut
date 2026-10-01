@@ -11,6 +11,7 @@ import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
+import { ChatTarjousWidget } from "../components/ChatTarjousWidget";
 
 function NotFoundComponent() {
   return (
@@ -34,12 +35,14 @@ function NotFoundComponent() {
   );
 }
 
-function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
-  console.error(error);
+function ErrorComponent({ error, reset }: { error: unknown; reset: () => void }) {
+  const safeError = error instanceof Error ? error : new Error(String(error));
+
+  console.error(safeError);
   const router = useRouter();
   useEffect(() => {
-    reportLovableError(error, { boundary: "tanstack_root_error_component" });
-  }, [error]);
+    reportLovableError(safeError, { boundary: "tanstack_root_error_component" });
+  }, [safeError]);
 
   return (
     <div className="flex min-h-screen items-center justify-center bg-background px-4">
@@ -92,12 +95,20 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
-      { name: "twitter:title", content: "KS-Sähkö Oy — Luotettavaa sähköurakointia Keski-Suomessa" },
-      { name: "description", content: "Modernizes KS-Sähkö Oy's website for electrical contracting services, enhancing user experience and lead generation." },
-      { property: "og:description", content: "Modernizes KS-Sähkö Oy's website for electrical contracting services, enhancing user experience and lead generation." },
-      { name: "twitter:description", content: "Modernizes KS-Sähkö Oy's website for electrical contracting services, enhancing user experience and lead generation." },
-      { property: "og:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/kDFxTauTIeMCeqmxwS2rgD6Z1R42/social-images/social-1782190125324-Logo_k.webp" },
-      { name: "twitter:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/kDFxTauTIeMCeqmxwS2rgD6Z1R42/social-images/social-1782190125324-Logo_k.webp" },
+      {
+        name: "twitter:title",
+        content: "KS-Sähkö Oy — Luotettavaa sähköurakointia Keski-Suomessa",
+      },
+      {
+        property: "og:image",
+        content:
+          "https://storage.googleapis.com/gpt-engineer-file-uploads/kDFxTauTIeMCeqmxwS2rgD6Z1R42/social-images/social-1782190125324-Logo_k.webp",
+      },
+      {
+        name: "twitter:image",
+        content:
+          "https://storage.googleapis.com/gpt-engineer-file-uploads/kDFxTauTIeMCeqmxwS2rgD6Z1R42/social-images/social-1782190125324-Logo_k.webp",
+      },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
@@ -117,7 +128,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 
 function RootShell({ children }: { children: ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="fi">
       <head>
         <HeadContent />
         {/* Google tag (gtag.js) — Analytics + Google Ads conversion tracking */}
@@ -146,8 +157,10 @@ function RootComponent() {
 
   return (
     <QueryClientProvider client={queryClient}>
-      {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
+      {/* Required: nested routes render here */}
       <Outlet />
+      {/* Interaktiivinen Tarjouspyyntö-Chat-Widget näkyy nyt kaikilla sivuilla */}
+      <ChatTarjousWidget />
     </QueryClientProvider>
   );
 }
