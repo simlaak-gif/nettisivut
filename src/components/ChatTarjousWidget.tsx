@@ -61,6 +61,12 @@ export function ChatTarjousWidget() {
 
     setIsSending(true);
 
+    // Napataan URL-osoitteesta UTM-parametrit
+    const urlParams = new URLSearchParams(window.location.search);
+    const utmSource = urlParams.get("utm_source") || "Suora / Normaali";
+    const utmMedium = urlParams.get("utm_medium") || "-";
+    const utmCampaign = urlParams.get("utm_campaign") || "-";
+
     try {
       const formData = new FormData();
       formData.append("access_key", "d27e59d7-fc45-4b26-8860-ff6af1e6df72");
@@ -75,6 +81,11 @@ export function ChatTarjousWidget() {
       formData.append("Asiakkaan Puhelin", phone);
       formData.append("Asiakkaan Sähköposti", email || "Ei annettu");
 
+      // LISÄTÄÄN UTM-KAMPANJATIEDOT SÄHKÖPOSTIIN
+      formData.append("Mainoslähde (utm_source)", utmSource);
+      formData.append("Tapa (utm_medium)", utmMedium);
+      formData.append("Kampanja (utm_campaign)", utmCampaign);
+
       const response = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
         body: formData,
@@ -85,15 +96,16 @@ export function ChatTarjousWidget() {
       if (data.success) {
         setIsSubmitted(true);
 
-        // 🚀 CHATGPT ADS KONVERSIO-LUKU
+        // ChatGPT Ads Konversioseuranta
         if (typeof window !== "undefined" && (window as any).oaiq) {
           (window as any).oaiq("measure", "lead_created", {
             type: "customer_action",
             service: selectedService,
+            campaign: utmCampaign,
           });
         }
 
-        // Google Ads & Analytics konversio (varmistuksena)
+        // Google Analytics & Ads
         if (typeof window !== "undefined" && (window as any).gtag) {
           (window as any).gtag("event", "generate_lead", {
             event_category: "Tarjouspyyntö",
@@ -109,7 +121,6 @@ export function ChatTarjousWidget() {
       setIsSending(false);
     }
   };
-
   const resetForm = () => {
     setStep(1);
     setIsSubmitted(false);
