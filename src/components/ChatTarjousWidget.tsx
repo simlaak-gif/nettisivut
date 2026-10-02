@@ -54,7 +54,6 @@ export function ChatTarjousWidget() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    // Botti-ansa
     if (honeypot.trim() !== "") {
       setIsSubmitted(true);
       return;
@@ -85,6 +84,22 @@ export function ChatTarjousWidget() {
 
       if (data.success) {
         setIsSubmitted(true);
+
+        // 🚀 CHATGPT ADS KONVERSIO-LUKU
+        if (typeof window !== "undefined" && (window as any).oaiq) {
+          (window as any).oaiq("measure", "lead_created", {
+            type: "customer_action",
+            service: selectedService,
+          });
+        }
+
+        // Google Ads & Analytics konversio (varmistuksena)
+        if (typeof window !== "undefined" && (window as any).gtag) {
+          (window as any).gtag("event", "generate_lead", {
+            event_category: "Tarjouspyyntö",
+            event_label: selectedService,
+          });
+        }
       } else {
         alert("Virhe lähetyksessä: " + data.message);
       }

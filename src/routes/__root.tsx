@@ -143,6 +143,19 @@ gtag('config', 'G-904200985N');
 gtag('config', 'AW-18075345752');`,
           }}
         />
+
+        {/* ChatGPT Ads / OpenAI Ads Pixel */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `!function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://oaiq.openai.com/pixel.js?id='+i;f.parentNode.insertBefore(j,f);
+}(window,document,'script','oaiq','68P6a7NmY1s5Dx8C3eKGyD');
+oaiq('init', '68P6a7NmY1s5Dx8C3eKGyD');
+oaiq('track', 'PageView');`,
+          }}
+        />
       </head>
       <body>
         {children}
