@@ -50,6 +50,7 @@ function ReferenssitPage() {
       <main className="flex-1">
         <PageHero />
         <SociableKitPostsSection />
+        <SociableKitReviewsSection />
         <ElfsightReviewsSection />
         <GeoFactsSection />
         <ContactCtaSection />
@@ -133,6 +134,41 @@ function SociableKitPostsSection() {
 
         <div className="mt-12 bg-card border border-border rounded-2xl p-4 md:p-8 shadow-sm min-h-[350px]">
           <div className="sk-ww-google-business-posts" data-embed-id="25717366"></div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+{
+  /* SOCIABLEKIT GOOGLE REVIEWS WIDGET */
+}
+function SociableKitReviewsSection() {
+  useEffect(() => {
+    const script = document.createElement("script");
+    script.src = "https://widgets.sociablekit.com/google-reviews/widget.js";
+    script.async = true;
+    script.defer = true;
+    document.body.appendChild(script);
+
+    return () => {
+      if (document.body.contains(script)) {
+        document.body.removeChild(script);
+      }
+    };
+  }, []);
+
+  return (
+    <section className="py-16 bg-background border-t border-border">
+      <div className="container-px mx-auto">
+        <SectionHeading
+          eyebrow="Google-arvostelut"
+          title="Asiakkaidemme kokemuksia"
+          description="Aitoja arvioita ja suosituksia suoraan Google-profiilistamme."
+        />
+
+        <div className="mt-10 bg-card border border-border rounded-2xl p-4 md:p-8 shadow-sm min-h-[250px]">
+          <div className="sk-ww-google-reviews" data-embed-id="25720782"></div>
         </div>
       </div>
     </section>
