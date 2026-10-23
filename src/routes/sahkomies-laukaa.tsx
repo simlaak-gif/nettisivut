@@ -15,7 +15,7 @@ import {
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { SectionHeading } from "@/components/SectionHeading";
-import heroBgImage from "../assets/laukaa-hero.jpg";
+import heroBgImage from "../assets/laukaa_hero.jpg";
 
 // Schema.org-data tekoäly- ja hakukonehakuja (SEO & GEO Local) varten
 const jsonLdData = {
