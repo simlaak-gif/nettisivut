@@ -11,18 +11,20 @@ declare global {
   }
 }
 
-
-
 export const Route = createFileRoute("/yhteystiedot")({
   head: () => ({
     meta: [
       { title: "Ota yhteyttä — KS-Sähkö Oy | Sähköurakointi Jyväskylä & Laukaa" },
       {
         name: "description",
-        content: "Pyydä tarjous KS-Sähkö Oy:ltä. Soita 050 360 0142, lähetä viesti tai täytä yhteydenottolomake. Palvelemme koko Keski-Suomen aluetta.",
+        content:
+          "Pyydä tarjous KS-Sähkö Oy:ltä. Soita 050 360 0142, lähetä viesti tai täytä yhteydenottolomake. Palvelemme koko Keski-Suomen aluetta.",
       },
       { property: "og:title", content: "Ota yhteyttä — KS-Sähkö Oy" },
-      { property: "og:description", content: "Yhteystiedot ja tarjouspyyntö — sähköurakointi Keski-Suomessa." },
+      {
+        property: "og:description",
+        content: "Yhteystiedot ja tarjouspyyntö — sähköurakointi Keski-Suomessa.",
+      },
     ],
   }),
   component: ContactPage,
@@ -49,8 +51,6 @@ function ContactPage() {
             <ContactInfo />
           </div>
         </section>
-
-        <MapSection />
       </main>
       <SiteFooter />
     </div>
@@ -90,11 +90,16 @@ function ContactForm() {
         <div className="grid h-16 w-16 place-items-center rounded-full bg-[var(--brand)] text-[var(--ink)]">
           <CheckCircle2 className="size-8" strokeWidth={2.4} />
         </div>
-        <h3 className="mt-6 text-2xl font-display font-extrabold text-[var(--ink)]">Kiitos viestistäsi!</h3>
+        <h3 className="mt-6 text-2xl font-display font-extrabold text-[var(--ink)]">
+          Kiitos viestistäsi!
+        </h3>
         <p className="mt-2 text-muted-foreground max-w-md">
           Olemme vastaanottaneet tarjouspyyntösi ja palaamme asiaan yleensä saman arkipäivän aikana.
         </p>
-        <button onClick={() => setSent(false)} className="mt-6 text-sm font-bold text-[var(--brand-deep)] hover:underline">
+        <button
+          onClick={() => setSent(false)}
+          className="mt-6 text-sm font-bold text-[var(--brand-deep)] hover:underline"
+        >
           Lähetä uusi viesti
         </button>
       </div>
@@ -113,7 +118,9 @@ function ContactForm() {
       <input type="hidden" name="form-name" value="contact" />
       <input type="hidden" name="type" value={type} />
       <p style={{ display: "none" }}>
-        <label>Don't fill this out: <input name="bot-field" /></label>
+        <label>
+          Don't fill this out: <input name="bot-field" />
+        </label>
       </p>
       <div className="grid grid-cols-2 gap-2 p-1 rounded-lg bg-secondary">
         {(["b2b", "b2c"] as const).map((t) => (
@@ -122,7 +129,9 @@ function ContactForm() {
             type="button"
             onClick={() => setType(t)}
             className={`py-2.5 rounded-md text-sm font-bold transition-colors ${
-              type === t ? "bg-[var(--ink)] text-white shadow-sm" : "text-[var(--ink-soft)] hover:text-[var(--ink)]"
+              type === t
+                ? "bg-[var(--ink)] text-white shadow-sm"
+                : "text-[var(--ink-soft)] hover:text-[var(--ink)]"
             }`}
           >
             {t === "b2b" ? "Yritys / Rakennusliike" : "Yksityishenkilö"}
@@ -168,7 +177,19 @@ function ContactForm() {
   );
 }
 
-function Field({ label, name, type = "text", required = false, placeholder }: { label: string; name: string; type?: string; required?: boolean; placeholder?: string }) {
+function Field({
+  label,
+  name,
+  type = "text",
+  required = false,
+  placeholder,
+}: {
+  label: string;
+  name: string;
+  type?: string;
+  required?: boolean;
+  placeholder?: string;
+}) {
   return (
     <label className="text-sm font-semibold text-[var(--ink)]">
       {label}
@@ -185,10 +206,32 @@ function Field({ label, name, type = "text", required = false, placeholder }: { 
 
 function ContactInfo() {
   const items = [
-    { icon: Phone, title: "Puhelin", primary: "+358 50 360 0142", href: "tel:+358503600142", note: "Vastaamme arkisin 7–18" },
-    { icon: Mail, title: "Sähköposti", primary: "info@ks-sahko.fi", href: "mailto:info@ks-sahko.fi", note: "Vastaamme yleensä samana päivänä" },
-    { icon: MapPin, title: "Toimisto", primary: "Päivämiehenkuja 19, 41340 Laukaa", note: "Palvelemme koko Keski-Suomen aluetta" },
-    { icon: Clock, title: "Aukioloajat", primary: "Ma–Pe 7:00–18:00", note: "Päivystys yrityksille 24/7" },
+    {
+      icon: Phone,
+      title: "Puhelin",
+      primary: "+358 50 360 0142",
+      href: "tel:+358503600142",
+      note: "Vastaamme arkisin 7–18",
+    },
+    {
+      icon: Mail,
+      title: "Sähköposti",
+      primary: "info@ks-sahko.fi",
+      href: "mailto:info@ks-sahko.fi",
+      note: "Vastaamme yleensä samana päivänä",
+    },
+    {
+      icon: MapPin,
+      title: "Toimisto",
+      primary: "Päivämiehenkuja 19, 41340 Laukaa",
+      note: "Palvelemme koko Keski-Suomen aluetta",
+    },
+    {
+      icon: Clock,
+      title: "Aukioloajat",
+      primary: "Ma–Pe 7:00–18:00",
+      note: "Päivystys yrityksille 24/7",
+    },
   ];
   return (
     <div className="flex flex-col gap-4">
@@ -199,14 +242,18 @@ function ContactInfo() {
               <Icon className="size-5" strokeWidth={2.4} />
             </div>
             <div className="min-w-0">
-              <p className="text-xs uppercase tracking-[0.16em] font-bold text-muted-foreground">{title}</p>
+              <p className="text-xs uppercase tracking-[0.16em] font-bold text-muted-foreground">
+                {title}
+              </p>
               <p className="mt-1 text-base font-bold text-[var(--ink)]">{primary}</p>
               {note && <p className="mt-1 text-sm text-muted-foreground">{note}</p>}
             </div>
           </div>
         );
         return href ? (
-          <a key={title} href={href} className="block">{content}</a>
+          <a key={title} href={href} className="block">
+            {content}
+          </a>
         ) : (
           <div key={title}>{content}</div>
         );
@@ -222,28 +269,5 @@ function ContactInfo() {
         </div>
       </div>
     </div>
-  );
-}
-
-function MapSection() {
-  return (
-    <section className="pb-24">
-      <div className="container-px mx-auto">
-        <div className="rounded-2xl overflow-hidden border border-border shadow-[var(--shadow-card)]">
-          <div className="relative aspect-[21/9] bg-secondary">
-            <iframe
-              title="KS-Sähkö Oy sijainti — Laukaa"
-              src="https://www.openstreetmap.org/export/embed.html?bbox=25.4%2C62.3%2C26.0%2C62.5&layer=mapnik&marker=62.4131%2C25.9492"
-              className="absolute inset-0 h-full w-full border-0"
-              loading="lazy"
-            />
-            <div className="absolute bottom-4 left-4 rounded-lg bg-white/95 backdrop-blur px-4 py-3 shadow-md">
-              <p className="text-xs uppercase tracking-[0.16em] font-bold text-[var(--brand-deep)]">Toiminta-alue</p>
-              <p className="mt-1 text-sm font-bold text-[var(--ink)]">Jyväskylä · Laukaa · Keski-Suomi</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
   );
 }
