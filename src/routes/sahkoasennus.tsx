@@ -188,7 +188,7 @@ function ServicesPricingGrid() {
     {
       icon: Plug,
       title: "Pistorasioiden & kytkimien asennus",
-      price: "Alk. n. 80–160 €",
+      price: "Alk. n. 82–158 €",
       desc: "Uusien pistorasioiden lisääminen, pinnassa toimivien pistorasioiden vaihto turvallisiin maadoitettuihin malleihin tai rikkinäisten valokytkimien uusiminen.",
       points: [
         "Pinta- tai uppoasennus",
@@ -199,7 +199,7 @@ function ServicesPricingGrid() {
     {
       icon: Lightbulb,
       title: "Valaisinasennus & valaistusmuutokset",
-      price: "Alk. n. 80–150 €",
+      price: "Alk. n. 77–155 €",
       desc: "Kattovalaisimien, LED-nauhojen, pihavalojen sekä liiketunnistimien asennus ja kaapelointi kotiin tai liiketilaan.",
       points: [
         "Kattovalaisimet & spottivalot",
@@ -210,7 +210,7 @@ function ServicesPricingGrid() {
     {
       icon: Flame,
       title: "Lieden, uunin & kiukaan kytkentä",
-      price: "Alk. n. 85–120 €",
+      price: "Alk. n. 97–186 €",
       desc: "Kodinkoneiden turvallinen kiinteä sähkökytkentä. Liesien ja sähkökiukaiden asennus vaatii aina valtuutetun sähköasentajan.",
       points: ["Induktioliedet & uunit", "Sähkökiukaiden kytkentä", "Käyttöönottotarkastus"],
     },
