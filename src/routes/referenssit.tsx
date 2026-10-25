@@ -49,9 +49,9 @@ function ReferenssitPage() {
       <SiteHeader />
       <main className="flex-1">
         <PageHero />
-        <SociableKitPostsSection />
+        {/* <SociableKitPostsSection /> */}
         <SociableKitReviewsSection />
-        <ElfsightReviewsSection />
+        {/* <ElfsightReviewsSection /> */}
         <GeoFactsSection />
         <ContactCtaSection />
       </main>
@@ -105,40 +105,40 @@ function PageHero() {
   );
 }
 
-{
-  /* SOCIABLEKIT GOOGLE BUSINESS POSTS WIDGET */
-}
-function SociableKitPostsSection() {
-  useEffect(() => {
-    const script = document.createElement("script");
-    script.src = "https://widgets.sociablekit.com/google-business-posts/widget.js";
-    script.async = true;
-    script.defer = true;
-    document.body.appendChild(script);
+// {
+//   /* SOCIABLEKIT GOOGLE BUSINESS POSTS WIDGET */
+// }
+// function SociableKitPostsSection() {
+//   useEffect(() => {
+//     const script = document.createElement("script");
+//     script.src = "https://widgets.sociablekit.com/google-business-posts/widget.js";
+//     script.async = true;
+//     script.defer = true;
+//     document.body.appendChild(script);
 
-    return () => {
-      if (document.body.contains(script)) {
-        document.body.removeChild(script);
-      }
-    };
-  }, []);
+//     return () => {
+//       if (document.body.contains(script)) {
+//         document.body.removeChild(script);
+//       }
+//     };
+//   }, []);
 
-  return (
-    <section className="py-20 bg-background">
-      <div className="container-px mx-auto">
-        <SectionHeading
-          eyebrow="Aito Google-syöte"
-          title="Uusimmat päivitykset kentältä"
-          description="Alla oleva syöte päivittyy automaattisesti aina, kun julkaisemme uuden työkohdekuvan tai päivityksen Googleen."
-        />
+//   return (
+//     <section className="py-20 bg-background">
+//       <div className="container-px mx-auto">
+//         <SectionHeading
+//           eyebrow="Aito Google-syöte"
+//           title="Uusimmat päivitykset kentältä"
+//           description="Alla oleva syöte päivittyy automaattisesti aina, kun julkaisemme uuden työkohdekuvan tai päivityksen Googleen."
+//         />
 
-        <div className="mt-12 bg-card border border-border rounded-2xl p-4 md:p-8 shadow-sm min-h-[350px]">
-          <div className="sk-ww-google-business-posts" data-embed-id="25717366"></div>
-        </div>
-      </div>
-    </section>
-  );
-}
+//         <div className="mt-12 bg-card border border-border rounded-2xl p-4 md:p-8 shadow-sm min-h-[350px]">
+//           <div className="sk-ww-google-business-posts" data-embed-id="25717366"></div>
+//         </div>
+//       </div>
+//     </section>
+//   );
+// }
 
 {
   /* SOCIABLEKIT GOOGLE REVIEWS WIDGET */
@@ -175,42 +175,42 @@ function SociableKitReviewsSection() {
   );
 }
 
-{
-  /* ELFSIGHT GOOGLE REVIEWS WIDGET */
-}
-function ElfsightReviewsSection() {
-  useEffect(() => {
-    const script = document.createElement("script");
-    script.src = "https://elfsightcdn.com/platform.js";
-    script.async = true;
-    document.body.appendChild(script);
+// {
+//   /* ELFSIGHT GOOGLE REVIEWS WIDGET */
+// }
+// function ElfsightReviewsSection() {
+//   useEffect(() => {
+//     const script = document.createElement("script");
+//     script.src = "https://elfsightcdn.com/platform.js";
+//     script.async = true;
+//     document.body.appendChild(script);
 
-    return () => {
-      if (document.body.contains(script)) {
-        document.body.removeChild(script);
-      }
-    };
-  }, []);
+//     return () => {
+//       if (document.body.contains(script)) {
+//         document.body.removeChild(script);
+//       }
+//     };
+//   }, []);
 
-  return (
-    <section className="py-16 bg-secondary/30 border-t border-border">
-      <div className="container-px mx-auto">
-        <SectionHeading
-          eyebrow="Asiakaskokemukset"
-          title="Mitä asiakkaamme sanovat Googlessa?"
-          description="Aitoja arvioita ja kokemuksia suoraan Google-yritysprofiilistamme."
-        />
+//   return (
+//     <section className="py-16 bg-secondary/30 border-t border-border">
+//       <div className="container-px mx-auto">
+//         <SectionHeading
+//           eyebrow="Asiakaskokemukset"
+//           title="Mitä asiakkaamme sanovat Googlessa?"
+//           description="Aitoja arvioita ja kokemuksia suoraan Google-yritysprofiilistamme."
+//         />
 
-        <div className="mt-10 bg-card border border-border rounded-2xl p-4 md:p-8 shadow-sm min-h-[250px]">
-          <div
-            className="elfsight-app-3a8d12e0-0f4e-488c-8b95-b6747cc47e76"
-            data-elfsight-app-lazy
-          ></div>
-        </div>
-      </div>
-    </section>
-  );
-}
+//         <div className="mt-10 bg-card border border-border rounded-2xl p-4 md:p-8 shadow-sm min-h-[250px]">
+//           <div
+//             className="elfsight-app-3a8d12e0-0f4e-488c-8b95-b6747cc47e76"
+//             data-elfsight-app-lazy
+//           ></div>
+//         </div>
+//       </div>
+//     </section>
+//   );
+// }
 
 {
   /* GEO FAKTABOXI TEKOÄLY HAUILLE */
