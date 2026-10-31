@@ -112,6 +112,15 @@ export function ChatTarjousWidget() {
             event_label: selectedService,
           });
         }
+
+        // Meta Pixel (Facebook / Instagram Ads) Lead-konversio
+        if (typeof window !== "undefined" && typeof (window as any).fbq === "function") {
+          (window as any).fbq("track", "Lead", {
+            content_name: selectedService,
+            content_category: "Chat Tarjouspyyntö",
+            city: location,
+          });
+        }
       } else {
         alert("Virhe lähetyksessä: " + data.message);
       }
@@ -121,6 +130,7 @@ export function ChatTarjousWidget() {
       setIsSending(false);
     }
   };
+
   const resetForm = () => {
     setStep(1);
     setIsSubmitted(false);

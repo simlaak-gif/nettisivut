@@ -8,6 +8,7 @@ import { SectionHeading } from "@/components/SectionHeading";
 declare global {
   interface Window {
     gtag?: (...args: unknown[]) => void;
+    fbq?: (...args: unknown[]) => void;
   }
 }
 
@@ -77,10 +78,21 @@ function ContactForm() {
     } catch (err) {
       console.error("Form submission error:", err);
     }
-    // Register the Google Ads conversion once the form reaches its success state.
+
+    // 1. Google Ads -konversio
     if (window.gtag) {
       window.gtag("event", "conversion", { send_to: "AW-18075345752/YEmvCMiS9cscENjG_6pD" });
     }
+
+    // 2. Meta Pixel (Facebook / Instagram Ads) Lead-konversio
+    if (typeof window.fbq === "function") {
+      window.fbq("track", "Lead", {
+        content_name: type === "b2b" ? "Yritys / Rakennusliike" : "Yksityishenkilö",
+        content_category: "Yhteydenottolomake",
+        city: params.get("location") || "",
+      });
+    }
+
     setSent(true);
   }
 
