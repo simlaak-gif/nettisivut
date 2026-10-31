@@ -4,10 +4,11 @@ import {
   Link,
   createRootRouteWithContext,
   useRouter,
+  useLocation,
   HeadContent,
   Scripts,
 } from "@tanstack/react-router";
-import { useEffect, type ReactNode } from "react";
+import { useEffect, useRef, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
@@ -129,6 +130,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
   notFoundComponent: NotFoundComponent,
   errorComponent: ErrorComponent,
 });
+
 function RootShell({ children }: { children: ReactNode }) {
   return (
     <html lang="fi">
@@ -159,8 +161,33 @@ oaiq('init', '68P6a7NmY1s5Dx8C3eKGyD');
 oaiq('track', 'PageView');`,
           }}
         />
+
+        {/* Meta Pixel Code */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1454386246636077');
+fbq('track', 'PageView');`,
+          }}
+        />
       </head>
       <body>
+        <noscript>
+          <img
+            height="1"
+            width="1"
+            style={{ display: "none" }}
+            src="https://www.facebook.com/tr?id=1454386246636077&ev=PageView&noscript=1"
+            alt=""
+          />
+        </noscript>
         {children}
         <Scripts />
       </body>
@@ -170,6 +197,40 @@ oaiq('track', 'PageView');`,
 
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
+  const location = useLocation();
+  const isFirstRender = useRef(true);
+
+  // 1. Seurataan SPA-sivunvaihtoja automaattisesti
+  useEffect(() => {
+    if (isFirstRender.current) {
+      isFirstRender.current = false;
+      return;
+    }
+    if (typeof window !== "undefined" && typeof (window as any).fbq === "function") {
+      (window as any).fbq("track", "PageView");
+    }
+  }, [location.pathname]);
+
+  // 2. Seurataan puhelin- ja sähköpostiklikkauksia automaattisesti kaikilla sivuilla
+  useEffect(() => {
+    const handleGlobalClick = (e: MouseEvent) => {
+      const target = (e.target as HTMLElement)?.closest("a");
+      if (!target) return;
+
+      const href = target.getAttribute("href") || "";
+      const fbq = (window as any).fbq;
+      if (typeof fbq !== "function") return;
+
+      if (href.startsWith("tel:")) {
+        fbq("track", "Contact", { content_name: "Puhelinsoitto", value: href });
+      } else if (href.startsWith("mailto:")) {
+        fbq("track", "Contact", { content_name: "Sähköposti", value: href });
+      }
+    };
+
+    document.addEventListener("click", handleGlobalClick);
+    return () => document.removeEventListener("click", handleGlobalClick);
+  }, []);
 
   return (
     <QueryClientProvider client={queryClient}>

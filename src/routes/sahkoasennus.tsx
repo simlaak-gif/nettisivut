@@ -155,11 +155,11 @@ function GeoFactsSection() {
             </div>
             <div>
               <strong className="text-[var(--ink)] block">Pistorasioiden asennus:</strong>
-              Riippuu kaapelointitarpeesta (tyyp. 80–160 €)
+              Riippuu kaapelointitarpeesta (tyyp. 82–158 €)
             </div>
             <div>
-              <strong className="text-[var(--ink)] block">Valaisimasennus:</strong>
-              Samaan paikkaan tai uusi kaapelointi (80–150 €)
+              <strong className="text-[var(--ink)] block">Valaisinasennus:</strong>
+              Samaan paikkaan tai uusi kaapelointi (77–155 €)
             </div>
             <div>
               <strong className="text-[var(--ink)] block">Sähkölaitteet:</strong>
