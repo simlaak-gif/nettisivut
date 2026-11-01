@@ -9,6 +9,7 @@ declare global {
   interface Window {
     gtag?: (...args: unknown[]) => void;
     fbq?: (...args: unknown[]) => void;
+    oaiq?: ((...args: unknown[]) => void) | unknown[];
   }
 }
 
@@ -79,18 +80,52 @@ function ContactForm() {
       console.error("Form submission error:", err);
     }
 
+    const customerType = type === "b2b" ? "Yritys / Rakennusliike" : "Yksityishenkilö";
+    const cityValue = params.get("location") || "";
+
     // 1. Google Ads -konversio
-    if (window.gtag) {
+    if (typeof window.gtag === "function") {
       window.gtag("event", "conversion", { send_to: "AW-18075345752/YEmvCMiS9cscENjG_6pD" });
     }
 
     // 2. Meta Pixel (Facebook / Instagram Ads) Lead-konversio
     if (typeof window.fbq === "function") {
       window.fbq("track", "Lead", {
-        content_name: type === "b2b" ? "Yritys / Rakennusliike" : "Yksityishenkilö",
+        content_name: customerType,
         content_category: "Yhteydenottolomake",
-        city: params.get("location") || "",
+        city: cityValue,
       });
+    }
+
+    // 3. ChatGPT Ads / OpenAI Pixel Lead-konversio (tukee sekä funktiota että taulukkoa)
+    if (typeof window.oaiq === "function") {
+      window.oaiq("track", "Lead", {
+        content_name: customerType,
+        content_category: "Yhteydenottolomake",
+        city: cityValue,
+      });
+      window.oaiq("measure", "lead_created", {
+        type: "contact_form",
+        service: customerType,
+      });
+    } else if (Array.isArray(window.oaiq)) {
+      window.oaiq.push([
+        "track",
+        "Lead",
+        {
+          content_name: customerType,
+          content_category: "Yhteydenottolomake",
+          city: cityValue,
+        },
+      ]);
+      window.oaiq.push([
+        "measure",
+        "lead_created",
+        {
+          type: "contact_form",
+          service: customerType,
+        },
+      ]);
     }
 
     setSent(true);

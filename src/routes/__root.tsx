@@ -149,13 +149,16 @@ gtag('config', 'AW-18075345752');`,
           }}
         />
 
-        {/* ChatGPT Ads / OpenAI Ads Pixel */}
+        {/* ChatGPT Ads / OpenAI Ads Pixel (Alustus + Jonotus) */}
         <script
           dangerouslySetInnerHTML={{
-            __html: `!function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://oaiq.openai.com/pixel.js?id='+i;f.parentNode.insertBefore(j,f);
+            __html: `!function(w,d,s,l,i){
+w[l]=w[l]||function(){(w[l].q=w[l].q||[]).push(arguments)};
+w[l].l=1*new Date();
+var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s);j.async=true;
+j.src='https://oaiq.openai.com/pixel.js?id='+i;
+f.parentNode.insertBefore(j,f);
 }(window,document,'script','oaiq','68P6a7NmY1s5Dx8C3eKGyD');
 oaiq('init', '68P6a7NmY1s5Dx8C3eKGyD');
 oaiq('track', 'PageView');`,
@@ -200,14 +203,19 @@ function RootComponent() {
   const location = useLocation();
   const isFirstRender = useRef(true);
 
-  // 1. Seurataan SPA-sivunvaihtoja automaattisesti
+  // 1. Seurataan SPA-sivunvaihtoja automaattisesti (Meta + ChatGPT Ads)
   useEffect(() => {
     if (isFirstRender.current) {
       isFirstRender.current = false;
       return;
     }
-    if (typeof window !== "undefined" && typeof (window as any).fbq === "function") {
-      (window as any).fbq("track", "PageView");
+    if (typeof window !== "undefined") {
+      if (typeof (window as any).fbq === "function") {
+        (window as any).fbq("track", "PageView");
+      }
+      if (typeof (window as any).oaiq === "function") {
+        (window as any).oaiq("track", "PageView");
+      }
     }
   }, [location.pathname]);
 
@@ -219,12 +227,24 @@ function RootComponent() {
 
       const href = target.getAttribute("href") || "";
       const fbq = (window as any).fbq;
-      if (typeof fbq !== "function") return;
+      const oaiq = (window as any).oaiq;
 
       if (href.startsWith("tel:")) {
-        fbq("track", "Contact", { content_name: "Puhelinsoitto", value: href });
+        if (typeof fbq === "function") {
+          fbq("track", "Contact", { content_name: "Puhelinsoitto", value: href });
+        }
+        if (typeof oaiq === "function") {
+          oaiq("track", "Contact", { type: "phone_call", value: href });
+          oaiq("measure", "lead_created", { type: "phone_call", value: href });
+        }
       } else if (href.startsWith("mailto:")) {
-        fbq("track", "Contact", { content_name: "Sähköposti", value: href });
+        if (typeof fbq === "function") {
+          fbq("track", "Contact", { content_name: "Sähköposti", value: href });
+        }
+        if (typeof oaiq === "function") {
+          oaiq("track", "Contact", { type: "email", value: href });
+          oaiq("measure", "lead_created", { type: "email", value: href });
+        }
       }
     };
 

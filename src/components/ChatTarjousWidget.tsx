@@ -97,7 +97,12 @@ export function ChatTarjousWidget() {
         setIsSubmitted(true);
 
         // ChatGPT Ads Konversioseuranta
-        if (typeof window !== "undefined" && (window as any).oaiq) {
+        if (typeof window !== "undefined" && typeof (window as any).oaiq === "function") {
+          (window as any).oaiq("track", "Lead", {
+            content_name: selectedService,
+            content_category: "Chat Tarjouspyyntö",
+            city: location,
+          });
           (window as any).oaiq("measure", "lead_created", {
             type: "customer_action",
             service: selectedService,
