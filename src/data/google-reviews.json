@@ -1,0 +1,150 @@
+{
+  "averageRating": 4.900000095367432,
+  "totalReviewCount": 18,
+  "reviews": [
+    {
+      "id": "AbFvOqlpykUUoT6ixYaKiOGfrYx6Fz_FmWCqp9ldfeSdExdlKmTqZee8-5IvfmAFc1c5Y66M0ekdtg",
+      "author": "Jorma Penttinen",
+      "avatar": "https://lh3.googleusercontent.com/a/ACg8ocIw9MrEMoaeWcylDuro_DVyQmE5ldOTJVUjFcvCODlP1KhSoQ=s120-c-rp-mo-br100",
+      "rating": 5,
+      "comment": "Tilasimme latausaseman asennuksen. Asennus järjestyi hyvin sekä onnistui myös hyvin.",
+      "date": "2026-10-28T13:40:18.804595Z",
+      "reply": null
+    },
+    {
+      "id": "AbFvOqnci4wwoXdqvUuQo8Vtx_ueoF_OUC-X9xQuzF_vc5pRpXNKrI-qpI3mK_HxLvSA6mYFhU3Q",
+      "author": "Perttu Kemiläinen",
+      "avatar": "https://lh3.googleusercontent.com/a/ACg8ocINNhcyQwySJjwUnzDpNUucdhRsQX6CkvR7MoONpFJbT-4dCA=s120-c-rp-mo-br100",
+      "rating": 5,
+      "comment": "Homma pelasi ja palvelu oli hyvää. Teetän tulevaisuudessakin sähkötyöt heillä, jos vaan tarpeita ilmenee.",
+      "date": "2026-10-28T12:46:30.260158Z",
+      "reply": null
+    },
+    {
+      "id": "AbFvOqlM87X0zIoMjEWeIB63KNqBL6gmKzu7JMhSqGi3DRE_jFUGHmDSIdWNrrGQnVj49O33hFKdDg",
+      "author": "Harri Penttinen",
+      "avatar": "https://lh3.googleusercontent.com/a/ACg8ocLfex2KoKUSWPx4SINaXTI_fTiFOcfv7S_Ek8EvLE3h3UOZ7A=s120-c-rp-mo-br100",
+      "rating": 5,
+      "comment": "Asennus järjestyi nopealla aikataululla ja hoitui ammattitaitoisesti.",
+      "date": "2026-10-20T16:19:17.442268Z",
+      "reply": null
+    },
+    {
+      "id": "AbFvOqkDZcXhW1n_OwTdt1ZDba5Bqn7v8My86cGaS1Gk5W9h-XPWhgdjDDLVyRRWeKgUJ1FmfFPeIg",
+      "author": "Anna-Helena Mero",
+      "avatar": "https://lh3.googleusercontent.com/a/ACg8ocLKnufB48K9hJ5JkUYm3wlQD-s8a5kkV22-2Fo83Rk9Vw6dgg=s120-c-rp-mo-br100",
+      "rating": 4,
+      "comment": "Asiakaspalvelu oli ystävällistä, aikataulut pitivät ja lopputulos oli hyvä. Suosittelemme teitä mielellämme muillekin.",
+      "date": "2026-10-14T15:00:39.660472Z",
+      "reply": null
+    },
+    {
+      "id": "AbFvOqmuJXQOPfrD5yzsCW0TerGxiA5e4kJnOMILfc0zM27-gb6CWjMcSrIYcplgYvswTSK-WRWRIA",
+      "author": "Mika Haaparanta",
+      "avatar": "https://lh3.googleusercontent.com/a/ACg8ocK8uYEAcYPVfJqDV7DOLTWf6ioDY-i2hOwr7EHYhscDPztUrA=s120-c-rp-mo-br100",
+      "rating": 5,
+      "comment": "Kaikki sujui ajallaan, nopeasti ja siististi. Kiitos asentajille ammattitaitoisesta toiminnasta! Voin suositella teidän palveluita muillekkin.",
+      "date": "2026-10-12T10:02:59.343308Z",
+      "reply": null
+    },
+    {
+      "id": "AbFvOqnzaS7jwNQHLztkmt2RgUIvIm1qnRj5-b6wRIX8EklT_NncjuJmqv2BFafAUHmA2Ach836NEQ",
+      "author": "Kaarlo Nevala",
+      "avatar": "https://lh3.googleusercontent.com/a-/ALV-UjUkiiEas356U5g2xC8Dtgh16WZDmGA2kXZ9ny9gKsdMSvDpJJ8qmg=s120-c-rp-mo-br100",
+      "rating": 5,
+      "comment": "Työn suoritus tarjouspyynnöstä tilaukseen ja toimitukseen oli nopeaa. Yhteydenpito oli mutkatonta ja aikataulu piti. Työn suoritus ja latausyksikön käyttöön ohjaus oli hyvää. Jäi hyvä mieli laadukkaasta palvelusta!",
+      "date": "2026-10-09T08:50:53.844462Z",
+      "reply": null
+    },
+    {
+      "id": "AbFvOqnyQEWI0Jc5JJuRW0GH23F6Za9s5MQzdTavM8Kjaucxjm1kViUsnJE6iO9ALwgsNLzGua2AZQ",
+      "author": "Joel Sundström",
+      "avatar": "https://lh3.googleusercontent.com/a/ACg8ocKNZYwXeBWNS0M7gooYlb-4XQg0OqCbyKEBAfuK8oVphOu2ZQ=s120-c-rp-mo-br100",
+      "rating": 5,
+      "comment": "Sähköauton latauspisteen asennus hoitui ammattitaidolla, vaikka ei ollut ihan suoraviivainen asennus ja joutui vähän suunnittelemaan miten latauspiste saadaan paikalle. Lisäksi muut kodin sähkötyöt onnistui samalla.\n\nLämmin suositus kaikkiin kodin sähkötöihin!",
+      "date": "2026-10-07T17:16:05.543696Z",
+      "reply": null
+    },
+    {
+      "id": "AbFvOqn8tWaBwNSwW8fRjnPjlmEIyBEARwyL19BOSzEaesToO6PNBOhPWsgAbrNqFOt204Hs67i48A",
+      "author": "Marko Paassilta",
+      "avatar": "https://lh3.googleusercontent.com/a-/ALV-UjXyO8Ji-IJ-lMyeghBac2Z6N5tPZJi6JHKW-YmV4AjFguJtUoIa=s120-c-rp-mo-br100",
+      "rating": 5,
+      "comment": "Erittäin ammattitaitoista ja luotettavaa palvelua\n\nOlemme erittäin tyytyväisiä KS-Sähkö Oy:n tekemään työhön. He hoitivat uusien keittiökalusteiden sähköasennukset, lisäsivät ylimääräisen pistorasian sekä asensivat uuden uunin ja keittotason. Samalla he paransivat vanhoja sähköasennuksia ja antoivat arvokkaita asiantuntijavinkkejä, joista oli meille paljon hyötyä.\n\nTyön laatu oli ensiluokkaista ja toteutus erittäin nopeaa. Kaikki tehtiin huolellisesti, siististi ja ammattitaidolla. Erityiskiitos työn jäljestä sekä siitä, että sovitut aikataulut pitivät täsmällisesti alusta loppuun asti.\n\nKS-Sähkö Oy:n toiminnasta välittyy vahva osaaminen, asiakaslähtöisyys ja halu tehdä työnsä mahdollisimman hyvin. Voin lämpimästi suositella heitä kaikille sähköalan palveluita tarvitseville. Jos valitset KS-Sähkö Oy:n, et varmasti tule pettymään.\n\nSuuret kiitokset erinomaisesta työstä!",
+      "date": "2026-10-05T06:20:26.979082Z",
+      "reply": null
+    },
+    {
+      "id": "AbFvOqk1R1WvA0-8vItdfzBhbMDAvklmep6LdBZ6NwbMEo3J9qB5mwXH6XZj-Nj7VkLZKPTlclS1iA",
+      "author": "Ari Keurulainen",
+      "avatar": "https://lh3.googleusercontent.com/a/ACg8ocJLkxHGm2xPjmsVq7WhZOiffHZL43-RkD8lzP2n6UbdWQatLA=s120-c-rp-mo-br100",
+      "rating": 5,
+      "comment": "Kaikki meni niin kuin oli sovittu. Erittäin ammattitaitoinen Asentaja. Voin suositella!",
+      "date": "2026-10-02T14:54:17.817921Z",
+      "reply": null
+    },
+    {
+      "id": "AbFvOqlHwOHl6HAamQKmWnHCaG4GG35QxaRhZAQM7KgJAoDWfrZ7fz2eWKxuakWxCV3IAUmnzZY9iA",
+      "author": "Lauri Ahokas",
+      "avatar": "https://lh3.googleusercontent.com/a-/ALV-UjXkdBJR_vjLKN8WRndEKFqaXzLCh_8WF8QUNuuPXG7JBc9Mi8AGFg=s120-c-rp-mo-ba12-br100",
+      "rating": 5,
+      "comment": "Nopea ja laadukasta palvelua. Uskallan suositella",
+      "date": "2026-10-01T07:33:38.763462Z",
+      "reply": null
+    },
+    {
+      "id": "AbFvOqkvzJf7H2eXTRYaQbNhcC-z2TVbbbrOruG1oqho-ESy1K9MXaMs_e0_OWZPh0Rvhfub8jCqFA",
+      "author": "Niila Hannuksela",
+      "avatar": "https://lh3.googleusercontent.com/a-/ALV-UjU0QGL64h_xLwC5DzmYog1BC4LSyQAb0vUvMepQPbRe4Pvhd4VcDg=s120-c-rp-mo-br100",
+      "rating": 5,
+      "comment": "Ammattimaista palvelua. Työt tehty sopimuksen mukaan.",
+      "date": "2026-10-01T06:44:32.613793Z",
+      "reply": null
+    },
+    {
+      "id": "AbFvOqmvrMkq80hTBBBM2iR6d8H6DxYowZA-CgEXxY0zsMlPkJdPFc0F_FjnE7BOG22eVNzPRGD3mg",
+      "author": "Fabian Maukonen",
+      "avatar": "https://lh3.googleusercontent.com/a/ACg8ocKkqX4hiwJUIyHs_4D3AZtG41AdjcUpFDYYjyh8evZamU6YIg=s120-c-rp-mo-br100",
+      "rating": 5,
+      "comment": "Erinomainen asiakaspalvelu ja hommat hoitui kuten oli sovittu.",
+      "date": "2026-10-01T06:40:38.475239Z",
+      "reply": null
+    },
+    {
+      "id": "AbFvOqmuTAQjiMzqsciyjAfxn_F2-ykQtCxSf3H2-tBjN4NrU3kODVuZ6ydXP3UXUsm_4unEYlPk",
+      "author": "Heli Ahvenjärvi",
+      "avatar": "https://lh3.googleusercontent.com/a/ACg8ocJ8Ydj3I2stBvU_-9cVZPBzgSSStWySqEYXmvatZuD9sHAI6A=s120-c-rp-mo-br100",
+      "rating": 4,
+      "comment": "Erittäin hyvä ja nopea palvelu! Suosittelen lämpimästi!",
+      "date": "2026-09-13T14:54:14.125042Z",
+      "reply": null
+    },
+    {
+      "id": "AbFvOqnnLpaErWe9Z2jWo4hNPWqBd_9nisVYqiAEfIEe4It_nV-XNce-8PCA-j_Ut8fltyYKlGP7lQ",
+      "author": "Pasi Pöppönen",
+      "avatar": "https://lh3.googleusercontent.com/a-/ALV-UjWg1z9t6iPXVibD2vJpWuxwYUaK6cjpxIrDZD-0S1JJwVUgDOINXg=s120-c-rp-mo-br100",
+      "rating": 5,
+      "comment": "Työnjäljestä huomaa että asialla on ammattilainen, joka ottaa työturvallisuuden huomioon. Teit työt tehokkaasti ja siivosit vielä kaikki kuoritut johdonpätkät mukaan.",
+      "date": "2026-08-28T16:02:05.419295Z",
+      "reply": null
+    },
+    {
+      "id": "AbFvOqmwXxmgs6pYTkW1sHIAez3DB8--Jtx4K7EKzJ4WVLEh_mE02JTCTY_Mh0gfHr9focc5fskzlw",
+      "author": "Olli Syrjälä",
+      "avatar": "https://lh3.googleusercontent.com/a/ACg8ocIxnlpQqA8xUa5mmuTx3Tfe8Dhr5Vt8s_sXg8V2fdwFStY8pQ=s120-c-rp-mo-br100",
+      "rating": 5,
+      "comment": "Tilattu sähköauton latausasemaa ja ilmalämpöpumppua kotiin. Hinta kilpailukykyinen ja asennusajat on pystytty sopimaan joustavasti. Asennusjälki ollut todella siistiä ja lopputulos hyvä, ei hirveästi mitään huomautettavaa.",
+      "date": "2026-08-05T11:12:10.767162Z",
+      "reply": null
+    },
+    {
+      "id": "AbFvOqn1FNKxt_vFsv_ORSNClcVeyliSOpdA13z4EWxlKP2SqlfcALeIX5GpVXCkIKbBZZ8MWv4Z-g",
+      "author": "Atte Vatanen",
+      "avatar": "https://lh3.googleusercontent.com/a-/ALV-UjVzgLuMVso-x0riqo1d8rXaekXZU6988Yd1p7jHn_DvYR_Hj7sJ=s120-c-rp-mo-br100",
+      "rating": 5,
+      "comment": "Homma hoitu nopeasti kerralla kuntoon! Vahva suositus",
+      "date": "2026-07-27T18:32:09.794677Z",
+      "reply": null
+    }
+  ]
+}
